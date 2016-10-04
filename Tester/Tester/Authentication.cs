@@ -65,7 +65,7 @@ namespace Tester
 
             SqlDbConection2.ConnectionString = "Integrated Security = SSPI; Initial Catalog = EmployeeDB; Data Source = ANDREW\\SQLEXPRESS;";
            // Console.Out.WriteLine("Connection Established");
-        }//end DBSetup()
+        }//end DBSetup()-
 
         public void SelectDB()
         {
