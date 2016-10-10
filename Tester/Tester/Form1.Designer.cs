@@ -30,6 +30,7 @@
         {
             this.btnCorrect = new System.Windows.Forms.Button();
             this.btnIncorrect = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCorrect
@@ -38,7 +39,7 @@
             this.btnCorrect.Name = "btnCorrect";
             this.btnCorrect.Size = new System.Drawing.Size(98, 49);
             this.btnCorrect.TabIndex = 0;
-            this.btnCorrect.Text = "Correct";
+            this.btnCorrect.Text = "Correct All";
             this.btnCorrect.UseVisualStyleBackColor = true;
             this.btnCorrect.Click += new System.EventHandler(this.btnCorrect_Click);
             // 
@@ -48,15 +49,26 @@
             this.btnIncorrect.Name = "btnIncorrect";
             this.btnIncorrect.Size = new System.Drawing.Size(98, 49);
             this.btnIncorrect.TabIndex = 1;
-            this.btnIncorrect.Text = "Incorrect";
+            this.btnIncorrect.Text = "Incorrect UN";
             this.btnIncorrect.UseVisualStyleBackColor = true;
             this.btnIncorrect.Click += new System.EventHandler(this.btnIncorrect_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(86, 227);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(98, 49);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Correct UN";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(284, 333);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnIncorrect);
             this.Controls.Add(this.btnCorrect);
             this.Name = "Form1";
@@ -69,6 +81,7 @@
 
         private System.Windows.Forms.Button btnCorrect;
         private System.Windows.Forms.Button btnIncorrect;
+        private System.Windows.Forms.Button button1;
     }
 }
 

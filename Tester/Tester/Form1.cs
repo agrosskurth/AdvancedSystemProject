@@ -35,5 +35,14 @@ namespace Tester
             a1.DBSetup();
             a1.SelectDB();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //instatiate Authentication Object
+            Authentication a1;
+            a1 = new Authentication("900254455", "Wrong");
+            a1.DBSetup();
+            a1.SelectDB();
+        }
     }
 }
