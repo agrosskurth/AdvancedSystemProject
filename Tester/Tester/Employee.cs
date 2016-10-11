@@ -8,5 +8,11 @@ namespace Tester
 {
     class Employee
     {
+        //==========Properties===========//
+        bool SR, HR, NE;
+        String id, fName, lName, street, city, state, zip, email, SRID;
+
+
+
     }
 }
