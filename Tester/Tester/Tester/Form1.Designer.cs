@@ -30,13 +30,11 @@
         {
             this.btnCorrect = new System.Windows.Forms.Button();
             this.btnIncorrect = new System.Windows.Forms.Button();
-            this.btnNew = new System.Windows.Forms.Button();
-            this.btnTime = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCorrect
             // 
-            this.btnCorrect.Location = new System.Drawing.Point(31, 73);
+            this.btnCorrect.Location = new System.Drawing.Point(86, 53);
             this.btnCorrect.Name = "btnCorrect";
             this.btnCorrect.Size = new System.Drawing.Size(98, 49);
             this.btnCorrect.TabIndex = 0;
@@ -46,7 +44,7 @@
             // 
             // btnIncorrect
             // 
-            this.btnIncorrect.Location = new System.Drawing.Point(31, 131);
+            this.btnIncorrect.Location = new System.Drawing.Point(86, 140);
             this.btnIncorrect.Name = "btnIncorrect";
             this.btnIncorrect.Size = new System.Drawing.Size(98, 49);
             this.btnIncorrect.TabIndex = 1;
@@ -54,33 +52,11 @@
             this.btnIncorrect.UseVisualStyleBackColor = true;
             this.btnIncorrect.Click += new System.EventHandler(this.btnIncorrect_Click);
             // 
-            // btnNew
-            // 
-            this.btnNew.Location = new System.Drawing.Point(158, 73);
-            this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(98, 49);
-            this.btnNew.TabIndex = 2;
-            this.btnNew.Text = "New Employee";
-            this.btnNew.UseVisualStyleBackColor = true;
-            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
-            // 
-            // btnTime
-            // 
-            this.btnTime.Location = new System.Drawing.Point(158, 131);
-            this.btnTime.Name = "btnTime";
-            this.btnTime.Size = new System.Drawing.Size(98, 53);
-            this.btnTime.TabIndex = 3;
-            this.btnTime.Text = "Time Sheet";
-            this.btnTime.UseVisualStyleBackColor = true;
-            this.btnTime.Click += new System.EventHandler(this.btnTime_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.btnTime);
-            this.Controls.Add(this.btnNew);
             this.Controls.Add(this.btnIncorrect);
             this.Controls.Add(this.btnCorrect);
             this.Name = "Form1";
@@ -93,8 +69,6 @@
 
         private System.Windows.Forms.Button btnCorrect;
         private System.Windows.Forms.Button btnIncorrect;
-        private System.Windows.Forms.Button btnNew;
-        private System.Windows.Forms.Button btnTime;
     }
 }
 

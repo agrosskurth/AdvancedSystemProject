@@ -1,0 +1,9 @@
+c:\users\rusty\documents\visual studio 2015\Projects\Tester\Tester\bin\Debug\Tester.exe.config
+C:\Users\Rusty\Documents\Visual Studio 2015\Projects\Tester\Tester\obj\Debug\Tester.csprojResolveAssemblyReference.cache
+C:\Users\Rusty\Documents\Visual Studio 2015\Projects\Tester\Tester\obj\Debug\Tester.Form1.resources
+C:\Users\Rusty\Documents\Visual Studio 2015\Projects\Tester\Tester\obj\Debug\Tester.Properties.Resources.resources
+C:\Users\Rusty\Documents\Visual Studio 2015\Projects\Tester\Tester\obj\Debug\Tester.csproj.GenerateResource.Cache
+C:\Users\Rusty\Documents\Visual Studio 2015\Projects\Tester\Tester\bin\Debug\Tester.exe
+C:\Users\Rusty\Documents\Visual Studio 2015\Projects\Tester\Tester\bin\Debug\Tester.pdb
+C:\Users\Rusty\Documents\Visual Studio 2015\Projects\Tester\Tester\obj\Debug\Tester.exe
+C:\Users\Rusty\Documents\Visual Studio 2015\Projects\Tester\Tester\obj\Debug\Tester.pdb

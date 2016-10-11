@@ -17,41 +17,24 @@ namespace Tester
             InitializeComponent();
         }
 
-        //Correct Button Click
+        //Correct UN/PW Button Click
         private void btnCorrect_Click(object sender, EventArgs e)
         {
             //instantiate Authentication 
             Authentication a1;
             a1 = new Authentication("900254455", "123456");
-            a1.DBSetup();
+            //establish connection
             a1.SelectDB();
         }
 
+        //Incorrect UN/PW Button Click
         private void btnIncorrect_Click(object sender, EventArgs e)
         {
             //instatiate Authentication Object
             Authentication a1;
             a1 = new Authentication("Wrong", "Also Wrong");
-            a1.DBSetup();
+            //establish Connection
             a1.SelectDB();
-        }
-
-        private void btnNew_Click(object sender, EventArgs e)
-        {
-            Employee e1;
-            e1 = new Employee(false, false, true, "900254555", "Felipe", "Gava", "123 Here St", "Nowhere", "Mexico", "12321", "Gava.Juice@hotmail.com", "900254455");
-            e1.Display();
-        }
-
-        private void btnTime_Click(object sender, EventArgs e)
-        {
-            TimeIO t1;
-            DateTime ci;
-            ci = new DateTime(2011, 2, 1, 2, 56, 00);
-            DateTime co;
-            co = new DateTime(2011, 2, 3, 3, 56, 00);
-            t1 = new TimeIO("900254555", ci, co);
-            t1.updateDB(); 
         }
     }
 }
