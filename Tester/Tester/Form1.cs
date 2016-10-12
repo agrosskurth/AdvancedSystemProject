@@ -32,14 +32,18 @@ namespace Tester
             //instatiate Authentication Object
             Authentication a1;
             a1 = new Authentication("Wrong", "Also Wrong");
-            a1.DBSetup();
+            DBConnect d1;
+            d1 = new DBConnect();
+            d1.DBSetup();
             a1.SelectDB();
         }
 
         private void btnNew_Click(object sender, EventArgs e)
         {
+            DBConnect d1 = new DBConnect();
             Employee e1;
             e1 = new Employee(false, false, true, "900254555", "Felipe", "Gava", "123 Here St", "Nowhere", "Mexico", "12321", "Gava.Juice@hotmail.com", "900254455");
+            d1.DBSetup();
             e1.Display();
         }
 
@@ -51,7 +55,7 @@ namespace Tester
             DateTime co;
             co = new DateTime(2011, 2, 3, 3, 56, 00);
             t1 = new TimeIO("900254555", ci, co);
-            t1.updateDB(); 
+            t1.Display(); 
         }
     }
 }

@@ -68,7 +68,7 @@
             // 
             this.btnTime.Location = new System.Drawing.Point(158, 131);
             this.btnTime.Name = "btnTime";
-            this.btnTime.Size = new System.Drawing.Size(98, 53);
+            this.btnTime.Size = new System.Drawing.Size(98, 49);
             this.btnTime.TabIndex = 3;
             this.btnTime.Text = "Time Sheet";
             this.btnTime.UseVisualStyleBackColor = true;

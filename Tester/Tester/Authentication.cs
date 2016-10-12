@@ -63,7 +63,7 @@ namespace Tester
             SqlDataAdapter.UpdateCommand = SqlDbUpdateCommand2;
             SqlDataAdapter.DeleteCommand = SqlDbDeleteCommand2;
 
-            SqlDbConection2.ConnectionString = "Integrated Security = SSPI; Initial Catalog = EmployeeDB; Data Source = ANDREW\\SQLEXPRESS;";
+            SqlDbConection2.ConnectionString = "Data Source=MORNINGSTAR;Initial Catalog=employeeDB;Integrated Security=True;";
            // Console.Out.WriteLine("Connection Established");
         }//end DBSetup()-
 
