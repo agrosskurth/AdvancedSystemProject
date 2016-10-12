@@ -28,6 +28,7 @@ namespace Tester
             setClockOut(co);
         }
 
+        //==========Behaviors===========//
         public void Display()
         {
             Console.WriteLine(getId());
@@ -43,5 +44,16 @@ namespace Tester
         public String getId() { return id; }
         public DateTime getClockIn() { return clockIn; }
         public DateTime getClockOut() { return clockOut; }
+
+        //==========DB-ACCESS===========//
+        //The reason I made this method accept a string _id argument is to make sure that everytime that a new time pair is inserted it is
+        //associated with an appropriate employee id. I'm not even sure if we need this, and there might be a different way to do this, 
+        //but for now it will work.
+        //-Kyle
+        public void insertTime(string _id)
+        {
+
+        }
+        //I just realized that updating the time might be tricky. How we will determine what needs to be updated? 
     }
 }
