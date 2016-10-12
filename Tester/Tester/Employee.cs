@@ -13,6 +13,7 @@ namespace Tester
         String id, fName, lName, street, city, state, zip, email, SRID;
         DBConnect d1 = new DBConnect();
 
+        //==========Constructors===========//
         public Employee()
         {
             d1.DBSetup();
@@ -46,6 +47,7 @@ namespace Tester
             setSRID(sid);
         }
 
+        //==========Properties===========//
         public void Display()
         {
             Console.WriteLine(getSR());
@@ -80,5 +82,26 @@ namespace Tester
         public String getEmail() { return email; }
         public String getSRID() { return SRID; }
 
+        //==========DB-SETUP===========//
+
+        public void selectEmp(String _id)
+        {
+
+        }
+
+        public void insertEmp()
+        {
+
+        }
+
+        public void updateEmp()
+        {
+
+        }
+
+        public void deleteEmp()
+        {
+
+        }
     }
 }
