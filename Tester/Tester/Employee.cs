@@ -9,7 +9,7 @@ namespace Tester
     class Employee
     {
         //==========Properties===========//
-        bool SR, HR, NE;
+        bool SR, HR, NE, FT;
         String id, fName, lName, street, city, state, zip, email, SRID;
         DBConnect d1 = new DBConnect();
 
@@ -20,6 +20,7 @@ namespace Tester
             SR = false;
             HR = false;
             NE = false;
+            FT = false;
             id = "";
             fName = "";
             lName = "";
@@ -29,13 +30,15 @@ namespace Tester
             zip = "";
             email = "";
             SRID = "";
+            
         }
 
-        public Employee(bool s, bool h, bool n, String i, String fn, String ln, String str, String c, String sta, String z, String e, String sid)
+        public Employee(bool s, bool h, bool n, bool f, String i, String fn, String ln, String str, String c, String sta, String z, String e, String sid)
         {
             setSR(s);
             setHR(h);
             setNE(n);
+            setFT(f);
             setId(i);
             setFName(fn);
             setLName(ln);
@@ -59,6 +62,7 @@ namespace Tester
         public void setSR(bool s) { SR = s; }
         public void setHR(bool h) { HR = h; }
         public void setNE(bool n) { NE = n; }
+        public void setFT(bool f) { FT = f; }
         public void setId(String i) { id = i; }
         public void setFName(String fn) { fName = fn; }
         public void setLName(String ln) { lName = ln; }
@@ -72,9 +76,10 @@ namespace Tester
         public bool getSR() { return SR; }
         public bool getHR() { return HR; }
         public bool getNE() { return NE; }
+        public bool getFT() { return FT; }
         public String getId() { return id; }
         public String getFName() { return fName; }
-        public String getLame() { return lName; }
+        public String getLname() { return lName; }
         public String getStreet() { return street; }
         public String getCity() { return city; }
         public String getState() { return state; }
@@ -91,7 +96,8 @@ namespace Tester
 
         public void insertEmp()
         {
-
+            d1.DBSetup();
+            d1.DBInsert(getId(), getFName(), getLname(), getStreet(), getCity(), getState(), getZip(), getEmail(), getNE(), getSR(), getHR(), getSRID(), getFT());
         }
 
         public void updateEmp()

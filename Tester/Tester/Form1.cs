@@ -36,15 +36,14 @@ namespace Tester
             d1 = new DBConnect();
             d1.DBSetup();
             a1.SelectDB();
+            d1.DBClose();
         }
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            DBConnect d1 = new DBConnect();
             Employee e1;
-            e1 = new Employee(false, false, true, "900254555", "Felipe", "Gava", "123 Here St", "Nowhere", "Mexico", "12321", "Gava.Juice@hotmail.com", "900254455");
-            d1.DBSetup();
-            e1.Display();
+            e1 = new Employee(false, false, true, false, "900254555", "Felipe", "Gava", "123 Here St", "Nowhere", "MX", "12321", "Gava.Juice@hotmail.com", "900254455");
+            e1.insertEmp();
         }
 
         private void btnTime_Click(object sender, EventArgs e)
