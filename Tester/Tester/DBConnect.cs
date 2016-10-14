@@ -43,10 +43,6 @@ namespace Tester
             SqlDbConection2.ConnectionString = "Data Source=ANDREW\\SQLEXPRESS;Initial Catalog=EmployeeDB;Integrated Security=True";
             // Console.Out.WriteLine("Connection Established");
         }//end DBSetup()-
-        public void DBClose()
-        {
-            SqlDbConection2.Close();
-        }
 
         public void DBSelect()
         {
