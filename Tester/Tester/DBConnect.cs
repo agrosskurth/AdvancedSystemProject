@@ -78,7 +78,7 @@ namespace Tester
             }
             finally
             {
-                DBClose();
+                SqlDbConection2.Close();
             }
         }
     }
