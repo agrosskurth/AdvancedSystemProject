@@ -58,12 +58,15 @@ namespace Tester
         private void btnTime_Click(object sender, EventArgs e)
         {
             TimeIO t1;
-            DateTime ci;
-            ci = new DateTime(2011, 2, 1, 2, 56, 00);
-            DateTime co;
-            co = new DateTime(2011, 2, 3, 3, 56, 00);
-            t1 = new TimeIO("900254555", ci, co);
-            t1.Display();
+            //DateTime ci;
+            //ci = new DateTime(2011, 2, 1, 2, 56, 00);
+            //DateTime co;
+            //co = new DateTime(2011, 2, 3, 3, 56, 00);
+            //t1 = new TimeIO("900254555", ci, co);
+            //t1.Display();
+
+            t1 = new TimeIO();
+            t1.selectTime("900254455");
         }
         
     }//End Class
