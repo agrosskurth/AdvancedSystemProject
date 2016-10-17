@@ -1,3 +1,9 @@
 C:\Users\o4ndu\Source\Repos\AdvancedSystemProject\Tester\Tester\bin\Debug\Tester.exe.config
 C:\Users\o4ndu\Source\Repos\AdvancedSystemProject\Tester\Tester\obj\Debug\Tester.exe
 C:\Users\o4ndu\Source\Repos\AdvancedSystemProject\Tester\Tester\obj\Debug\Tester.pdb
+C:\Users\o4ndu\Source\Repos\AdvancedSystemProject\Tester\Tester\bin\Debug\Tester.exe
+C:\Users\o4ndu\Source\Repos\AdvancedSystemProject\Tester\Tester\bin\Debug\Tester.pdb
+C:\Users\o4ndu\Source\Repos\AdvancedSystemProject\Tester\Tester\obj\Debug\Tester.csprojResolveAssemblyReference.cache
+C:\Users\o4ndu\Source\Repos\AdvancedSystemProject\Tester\Tester\obj\Debug\Tester.Form1.resources
+C:\Users\o4ndu\Source\Repos\AdvancedSystemProject\Tester\Tester\obj\Debug\Tester.Properties.Resources.resources
+C:\Users\o4ndu\Source\Repos\AdvancedSystemProject\Tester\Tester\obj\Debug\Tester.csproj.GenerateResource.Cache
