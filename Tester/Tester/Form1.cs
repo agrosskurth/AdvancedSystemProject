@@ -17,7 +17,7 @@ namespace Tester
             InitializeComponent();
         }
 
-        //Correct Button Click
+        //=======Correct Button Click
         private void btnCorrect_Click(object sender, EventArgs e)
         {
             //instantiate Authentication 
@@ -26,7 +26,7 @@ namespace Tester
             a1.DBSetup();
             a1.SelectDB();
         }
-
+        //=======Inccorect Button Click
         private void btnIncorrect_Click(object sender, EventArgs e)
         {
             //instatiate Authentication Object
@@ -36,16 +36,25 @@ namespace Tester
             d1 = new DBConnect();
             d1.DBSetup();
             a1.SelectDB();
-            d1.DBClose();
         }
-
-        private void btnNew_Click(object sender, EventArgs e)
+        //=======Em-Select
+        private void btnSelectEmployee_Click(object sender, EventArgs e)
         {
             Employee e1;
-            e1 = new Employee(false, false, true, false, "900254555", "Felipe", "Gava", "123 Here St", "Nowhere", "MX", "12321", "Gava.Juice@hotmail.com", "900254455");
-            e1.insertEmp();
+            e1 = new Employee();
+            e1.selectEmp("900254455");
+            e1.Display();
+        }
+        //=======Em-Insert
+        private void btnInsertEmployee_Click_1(object sender, EventArgs e)
+        {
+            Employee e1;
+            e1 = new Employee("900254666", "Felipe", "Gava", "123 Here St", "Nowhere", "MX", "12321", "Gava.Juice@hotmail.com", false, false, false, "900254455", true);
+            e1.insertEmp();           
+            e1.Display();
         }
 
+        //=======Time
         private void btnTime_Click(object sender, EventArgs e)
         {
             TimeIO t1;
@@ -54,7 +63,8 @@ namespace Tester
             DateTime co;
             co = new DateTime(2011, 2, 3, 3, 56, 00);
             t1 = new TimeIO("900254555", ci, co);
-            t1.Display(); 
+            t1.Display();
         }
-    }
+        
+    }//End Class
 }

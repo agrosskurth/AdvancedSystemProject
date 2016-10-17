@@ -15,8 +15,7 @@ namespace Tester
 
         //==========Constructors===========//
         public Employee()
-        {
-            d1.DBSetup();
+        { 
             SR = false;
             HR = false;
             NE = false;
@@ -33,7 +32,7 @@ namespace Tester
             
         }
 
-        public Employee(bool s, bool h, bool n, bool f, String i, String fn, String ln, String str, String c, String sta, String z, String e, String sid)
+        public Employee(  String i, String fn, String ln, String str, String c, String sta, String z, String e, bool s, bool h, bool n, String sid, bool f)
         {
             setSR(s);
             setHR(h);
@@ -53,10 +52,18 @@ namespace Tester
         //==========Properties===========//
         public void Display()
         {
+            Console.WriteLine(getFName());
+            Console.WriteLine(getLName());
+            Console.WriteLine(getStreet());
+            Console.WriteLine(getCity());
+            Console.WriteLine(getState());
+            Console.WriteLine(getZip());
+            Console.WriteLine(getEmail());
+            Console.WriteLine(getNE());
             Console.WriteLine(getSR());
             Console.WriteLine(getHR());
-            Console.WriteLine(getNE());
-            Console.WriteLine(getId());
+            Console.WriteLine(getSRID());
+            Console.WriteLine(getFT());
         }
 
         public void setSR(bool s) { SR = s; }
@@ -79,7 +86,7 @@ namespace Tester
         public bool getFT() { return FT; }
         public String getId() { return id; }
         public String getFName() { return fName; }
-        public String getLname() { return lName; }
+        public String getLName() { return lName; }
         public String getStreet() { return street; }
         public String getCity() { return city; }
         public String getState() { return state; }
@@ -91,13 +98,13 @@ namespace Tester
 
         public void selectEmp(String _id)
         {
-
+            d1.DBSelect(_id);
         }
 
         public void insertEmp()
         {
             d1.DBSetup();
-            d1.DBInsert(getId(), getFName(), getLname(), getStreet(), getCity(), getState(), getZip(), getEmail(), getNE(), getSR(), getHR(), getSRID(), getFT());
+            d1.DBInsert(getId(), getFName(), getLName(), getStreet(), getCity(), getState(), getZip(), getEmail(), getNE(), getSR(), getHR(), getSRID(), getFT());
         }
 
         public void updateEmp()

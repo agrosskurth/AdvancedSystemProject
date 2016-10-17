@@ -1,32 +1,3 @@
-c:\users\rusty\documents\visual studio 2015\Projects\Tester\Tester\bin\Debug\Tester.exe.config
-C:\Users\Rusty\Documents\Visual Studio 2015\Projects\Tester\Tester\obj\Debug\Tester.csprojResolveAssemblyReference.cache
-C:\Users\Rusty\Documents\Visual Studio 2015\Projects\Tester\Tester\obj\Debug\Tester.Form1.resources
-C:\Users\Rusty\Documents\Visual Studio 2015\Projects\Tester\Tester\obj\Debug\Tester.Properties.Resources.resources
-C:\Users\Rusty\Documents\Visual Studio 2015\Projects\Tester\Tester\obj\Debug\Tester.csproj.GenerateResource.Cache
-C:\Users\Andrew\Desktop\Advanced Systems Project\Tester\Tester\bin\Debug\Tester.exe.config
-C:\Users\Andrew\Desktop\Advanced Systems Project\Tester\Tester\bin\Debug\Tester.exe
-C:\Users\Andrew\Desktop\Advanced Systems Project\Tester\Tester\bin\Debug\Tester.pdb
-C:\Users\Andrew\Desktop\Advanced Systems Project\Tester\Tester\obj\Debug\Tester.csprojResolveAssemblyReference.cache
-C:\Users\Andrew\Desktop\Advanced Systems Project\Tester\Tester\obj\Debug\Tester.Form1.resources
-C:\Users\Andrew\Desktop\Advanced Systems Project\Tester\Tester\obj\Debug\Tester.Properties.Resources.resources
-C:\Users\Andrew\Desktop\Advanced Systems Project\Tester\Tester\obj\Debug\Tester.csproj.GenerateResource.Cache
-C:\Users\Andrew\Desktop\Advanced Systems Project\Tester\Tester\obj\Debug\Tester.exe
-C:\Users\Andrew\Desktop\Advanced Systems Project\Tester\Tester\obj\Debug\Tester.pdb
-C:\Users\Andrew\Desktop\asp\AdvancedSystemProject\Tester\Tester\bin\Debug\Tester.exe.config
-C:\Users\Andrew\Desktop\asp\AdvancedSystemProject\Tester\Tester\obj\Debug\Tester.exe
-C:\Users\Andrew\Desktop\asp\AdvancedSystemProject\Tester\Tester\obj\Debug\Tester.pdb
-C:\Users\Rusty\Documents\Analysis\AdvancedSystemProject\Tester\Tester\bin\Debug\Tester.exe.config
-C:\Users\Rusty\Documents\Analysis\AdvancedSystemProject\Tester\Tester\bin\Debug\Tester.exe
-C:\Users\Rusty\Documents\Analysis\AdvancedSystemProject\Tester\Tester\bin\Debug\Tester.pdb
-C:\Users\Rusty\Documents\Analysis\AdvancedSystemProject\Tester\Tester\obj\Debug\Tester.Form1.resources
-C:\Users\Rusty\Documents\Analysis\AdvancedSystemProject\Tester\Tester\obj\Debug\Tester.Properties.Resources.resources
-C:\Users\Rusty\Documents\Analysis\AdvancedSystemProject\Tester\Tester\obj\Debug\Tester.csproj.GenerateResource.Cache
-C:\Users\Rusty\Documents\Analysis\AdvancedSystemProject\Tester\Tester\obj\Debug\Tester.exe
-C:\Users\Rusty\Documents\Analysis\AdvancedSystemProject\Tester\Tester\obj\Debug\Tester.pdb
-C:\Users\Rusty\Documents\Analysis\AdvancedSystemProject\Tester\Tester\obj\Debug\Tester.csprojResolveAssemblyReference.cache
-C:\Users\Andrew\Desktop\asp\AdvancedSystemProject\Tester\Tester\bin\Debug\Tester.exe
-C:\Users\Andrew\Desktop\asp\AdvancedSystemProject\Tester\Tester\bin\Debug\Tester.pdb
-C:\Users\Andrew\Desktop\asp\AdvancedSystemProject\Tester\Tester\obj\Debug\Tester.csprojResolveAssemblyReference.cache
-C:\Users\Andrew\Desktop\asp\AdvancedSystemProject\Tester\Tester\obj\Debug\Tester.Form1.resources
-C:\Users\Andrew\Desktop\asp\AdvancedSystemProject\Tester\Tester\obj\Debug\Tester.Properties.Resources.resources
-C:\Users\Andrew\Desktop\asp\AdvancedSystemProject\Tester\Tester\obj\Debug\Tester.csproj.GenerateResource.Cache
+C:\Users\o4ndu\Source\Repos\AdvancedSystemProject\Tester\Tester\bin\Debug\Tester.exe.config
+C:\Users\o4ndu\Source\Repos\AdvancedSystemProject\Tester\Tester\obj\Debug\Tester.exe
+C:\Users\o4ndu\Source\Repos\AdvancedSystemProject\Tester\Tester\obj\Debug\Tester.pdb

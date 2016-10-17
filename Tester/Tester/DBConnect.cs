@@ -9,13 +9,8 @@ using System.Data;
 namespace Tester
 {
     class DBConnect
-    {
-        public DBConnect()
-        {
-
-        }
+    {        
         //++++++++++++++DataBase Element 
-
         public System.Data.SqlClient.SqlDataAdapter SqlDataAdapter;
         public System.Data.SqlClient.SqlCommand SqlDbSelectCommand2;
         public System.Data.SqlClient.SqlCommand SqlDbInsertCommand2;
@@ -25,7 +20,6 @@ namespace Tester
         public string cmd;
 
         //++++++++++++++++Setup Function
-
         public void DBSetup()
         {
             SqlDataAdapter = new System.Data.SqlClient.SqlDataAdapter();
@@ -40,14 +34,65 @@ namespace Tester
             SqlDataAdapter.UpdateCommand = SqlDbUpdateCommand2;
             SqlDataAdapter.DeleteCommand = SqlDbDeleteCommand2;
 
-            SqlDbConection2.ConnectionString = "Data Source=ANDREW\\SQLEXPRESS;Initial Catalog=EmployeeDB;Integrated Security=True";
+            //RUSTY-- SqlDbConection2.ConnectionString = "Data Source=MORNINGSTAR;Initial Catalog=employeeDB;Integrated Security=True;";
+            SqlDbConection2.ConnectionString = "Data Source=DESKTOP-RCIQMS7;Initial Catalog=EmployeeDB;Integrated Security=True";
+            //SqlDbConection2.ConnectionString = "Data Source=ANDREW\\SQLEXPRESS;Initial Catalog=EmployeeDB;Integrated Security=True";
             // Console.Out.WriteLine("Connection Established");
         }//end DBSetup()-
 
-        public void DBSelect()
+        public void DBSelect(string id)
         {
+            id = "900254455";
+            Employee e1 = new Employee();
+            DBSetup();
+            //DBConnect db = new DBConnect();
+            //DBSetup();
 
-        }
+            Console.WriteLine("After set up");
+
+            cmd = "Select * from EmpInfo where EmpID ='" + id + "';";
+            SqlDataAdapter.SelectCommand.CommandText = cmd;
+            SqlDataAdapter.SelectCommand.Connection = SqlDbConection2;
+            Console.WriteLine(cmd);
+            //This part starts the connection and executes sql
+            try
+            {
+
+                SqlDbConection2.Open();
+                //Console.Out.WriteLine("This Works");
+                System.Data.SqlClient.SqlDataReader dr;
+                //Console.Out.WriteLine("This Also Works");
+                dr = SqlDataAdapter.SelectCommand.ExecuteReader();
+                //Console.Out.WriteLine("The SQL Statement works");
+
+                dr.Read();
+
+                e1.setFName(dr.GetValue(1) + "");
+                e1.setLName(dr.GetValue(2) + "");
+                e1.setStreet(dr.GetValue(3) + "");
+                e1.setCity(dr.GetValue(4) + "");
+                e1.setState(dr.GetValue(5) + "");
+                e1.setZip(dr.GetValue(6) + "");
+                e1.setEmail(dr.GetValue(7) + "");
+                e1.setNE(Convert.ToBoolean(dr.GetValue(8)));
+                e1.setSR(Convert.ToBoolean(dr.GetValue(9)));
+                e1.setHR(Convert.ToBoolean(dr.GetValue(10)));
+                e1.setSRID(dr.GetValue(11) + "");
+                e1.setFT(Convert.ToBoolean(dr.GetValue(12)));
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            //close the connection to the Database
+            finally
+            {
+                SqlDbConection2.Close();
+            }
+
+
+        }//End SelectDB()
 
         public void DBInsert(String id, String fn, String ln, String str, String c, String sta, String z, String e, bool n, bool s, bool h, String sr, bool f)
         {
