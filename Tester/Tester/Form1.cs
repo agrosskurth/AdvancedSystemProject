@@ -42,7 +42,7 @@ namespace Tester
         {
             Employee e1;
             e1 = new Employee();
-            e1.selectEmp("900254455");
+            e1.selectEmp("900254666");
             e1.Display();
         }
         //=======Em-Insert

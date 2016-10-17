@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace Tester
 {
@@ -149,7 +151,43 @@ namespace Tester
         public void insertEmp()
         {
             d1.DBSetup();
-            d1.DBInsert(getId(), getFName(), getLName(), getStreet(), getCity(), getState(), getZip(), getEmail(), getNE(), getSR(), getHR(), getSRID(), getFuTime());
+
+            Console.WriteLine("After set up");
+
+            //This part starts the connection and executes sql
+            d1.cmd = "Select* from EmpInfo where EmpId ='" + id + "'";
+            d1.SqlDataAdapter.SelectCommand.CommandText = d1.cmd;
+            d1.SqlDataAdapter.SelectCommand.Connection = d1.SqlDbConection2;
+            Console.WriteLine(d1.cmd);
+            try
+            {
+                d1.stmt = new SqlCommand("INSERT INTO EmpInfo (EmpID, First_Name, Last_Name, Street, City, State_, Zipcode, EMail, NE, SR, HR, SRID, FullTime) VALUES (@EmpID, @First_Name, @Last_Name, @Street, @City, @State_, @Zipcode, @EMail, @NE, @SR, @HR, @SRID, @FullTime)");
+                d1.stmt.Parameters.AddWithValue("@EmpID", getId());
+                d1.stmt.Parameters.AddWithValue("@First_Name", getFName());
+                d1.stmt.Parameters.AddWithValue("@Last_Name", getLName());
+                d1.stmt.Parameters.AddWithValue("@Street", getStreet());
+                d1.stmt.Parameters.AddWithValue("@City", getCity());
+                d1.stmt.Parameters.AddWithValue("@State_", getState());
+                d1.stmt.Parameters.AddWithValue("@Zipcode", getZip());
+                d1.stmt.Parameters.AddWithValue("@EMail", getEmail());
+                d1.stmt.Parameters.AddWithValue("@NE", getNE());
+                d1.stmt.Parameters.AddWithValue("@SR", getSR());
+                d1.stmt.Parameters.AddWithValue("@HR", getHR());
+                d1.stmt.Parameters.AddWithValue("@SRID", getSRID());
+                d1.stmt.Parameters.AddWithValue("@FullTime", getFuTime());
+                d1.SqlDbConection2.Open();
+                d1.stmt.Connection = d1.SqlDbConection2;
+                d1.stmt.ExecuteNonQuery();
+                Console.Out.WriteLine("It worked!");
+            }
+            catch (Exception ex)
+            {
+                Console.Out.WriteLine("Something happened: " + ex);
+            }
+            finally
+            {
+                d1.SqlDbConection2.Close();
+            }
         }
 
         //---------UpdateEmp
