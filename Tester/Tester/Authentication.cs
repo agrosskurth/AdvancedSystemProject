@@ -78,11 +78,11 @@ namespace Tester
                     //Osi's Computer
                     SqlDbConection2.ConnectionString = "Data Source=DESKTOP-RCIQMS7;Initial Catalog=EmployeeDB;Integrated Security=True";
                     break;
-                case "ANDREW\\SQLEXPRESS":
+                case "ANDREW":
                     //Andrew Grosskurth's Computer
                     SqlDbConection2.ConnectionString = "Data Source=ANDREW\\SQLEXPRESS;Initial Catalog=EmployeeDB;Integrated Security=True";
                     break;
-                case "KYLE-TOSHIBA\\SQLEXPRESS":
+                case "KYLE-TOSHIBA":
                     //Kyle's Computer
                     SqlDbConection2.ConnectionString = "Data Source=KYLE-TOSHIBA\\SQLEXPRESS;Initial Catalog=EmployeeDB;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
                     break;
