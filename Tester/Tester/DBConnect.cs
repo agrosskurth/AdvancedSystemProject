@@ -45,7 +45,8 @@ namespace Tester
                     break;
                 case "MORNINGSTAR":
                     //Rusty's Computer
-                    SqlDbConection2.ConnectionString = "Data Source=MORNINGSTAR;Initial Catalog=employeeDB;Integrated Security=True;";
+                    Console.WriteLine("Write This Here");
+                    SqlDbConection2.ConnectionString = "Data Source=MORNINGSTAR; Initial Catalog=employeeDB; Integrated Security=True";
                     break;
                 case "DESKTOP-RCIQMS7":
                     //Osi's Computer
