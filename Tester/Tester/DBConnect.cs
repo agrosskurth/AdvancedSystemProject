@@ -52,7 +52,7 @@ namespace Tester
                     //Osi's Computer
                     SqlDbConection2.ConnectionString = "Data Source=DESKTOP-RCIQMS7;Initial Catalog=EmployeeDB;Integrated Security=True";
                     break;
-                case "ANDREW\\SQLEXPRESS":
+                case "ANDREW":
                     //Andrew Grosskurth's Computer
                     SqlDbConection2.ConnectionString = "Data Source=ANDREW\\SQLEXPRESS;Initial Catalog=EmployeeDB;Integrated Security=True";
                     break;
