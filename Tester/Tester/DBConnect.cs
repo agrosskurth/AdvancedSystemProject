@@ -35,10 +35,39 @@ namespace Tester
             SqlDataAdapter.UpdateCommand = SqlDbUpdateCommand2;
             SqlDataAdapter.DeleteCommand = SqlDbDeleteCommand2;
 
+            //Variable and Switch Case made by Boyle
+            string compName = Environment.MachineName;
+            switch (compName)
+            {
+                case "CLEOPATRA":
+                    //Andrew Boyle's Computer
+                    SqlDbConection2.ConnectionString = "Data Source=CLEOPATRA;Initial Catalog=EmployeeDB;Integrated Security=True";
+                    break;
+                case "MORNINGSTAR":
+                    //Rusty's Computer
+                    SqlDbConection2.ConnectionString = "Data Source=MORNINGSTAR;Initial Catalog=employeeDB;Integrated Security=True;";
+                    break;
+                case "DESKTOP-RCIQMS7":
+                    //Osi's Computer
+                    SqlDbConection2.ConnectionString = "Data Source=DESKTOP-RCIQMS7;Initial Catalog=EmployeeDB;Integrated Security=True";
+                    break;
+                case "ANDREW\\SQLEXPRESS":
+                    //Andrew Grosskurth's Computer
+                    SqlDbConection2.ConnectionString = "Data Source=ANDREW\\SQLEXPRESS;Initial Catalog=EmployeeDB;Integrated Security=True";
+                    break;
+                case "KYLE-TOSHIBA\\SQLEXPRESS":
+                    //Kyle's Computer
+                    SqlDbConection2.ConnectionString = "Data Source=KYLE-TOSHIBA\\SQLEXPRESS;Initial Catalog=EmployeeDB;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+                    break;
+                default:
+                    Console.WriteLine("No computer found");
+                    break;
+            }
+
+            //Code Below is the old code. If this works for all 5 computers this can be deleted -Boyle
             //RUSTY-- SqlDbConection2.ConnectionString = "Data Source=MORNINGSTAR;Initial Catalog=employeeDB;Integrated Security=True;";
             //SqlDbConection2.ConnectionString = "Data Source=DESKTOP-RCIQMS7;Initial Catalog=EmployeeDB;Integrated Security=True";
             //SqlDbConection2.ConnectionString = "Data Source=ANDREW\\SQLEXPRESS;Initial Catalog=EmployeeDB;Integrated Security=True";
-            SqlDbConection2.ConnectionString = "Data Source=KYLE-TOSHIBA\\SQLEXPRESS;Initial Catalog=EmployeeDB;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
             // Console.Out.WriteLine("Connection Established");
         }//end DBSetup()
     }//End Class
