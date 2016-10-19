@@ -55,8 +55,9 @@ namespace Tester
                     //Andrew Grosskurth's Computer
                     SqlDbConection2.ConnectionString = "Data Source=ANDREW\\SQLEXPRESS;Initial Catalog=EmployeeDB;Integrated Security=True";
                     break;
-                case "KYLE-TOSHIBA\\SQLEXPRESS":
+                case "KYLE-TOSHIBA":
                     //Kyle's Computer
+                    Console.WriteLine("I'M IN KYLES COMPUTER");
                     SqlDbConection2.ConnectionString = "Data Source=KYLE-TOSHIBA\\SQLEXPRESS;Initial Catalog=EmployeeDB;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
                     break;
                 default:
