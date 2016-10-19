@@ -16,6 +16,7 @@ namespace Tester
         //to confram correct username and password
         bool x = false;
         bool _password = false;
+        DBConnect d1 = new DBConnect();
 
         public Authentication()
         {
@@ -37,87 +38,30 @@ namespace Tester
         public String getEmployeeId() { return _employeeId; }
         public String getEmployeePw() { return _employeePw; }
         public String getValidateEmployeePw() { return validateEmployeePw; }
-        //++++++++++++++DataBase Element 
 
-        public System.Data.SqlClient.SqlDataAdapter SqlDataAdapter;
-        public System.Data.SqlClient.SqlCommand SqlDbSelectCommand2;
-        public System.Data.SqlClient.SqlCommand SqlDbInsertCommand2;
-        public System.Data.SqlClient.SqlCommand SqlDbUpdateCommand2;
-        public System.Data.SqlClient.SqlCommand SqlDbDeleteCommand2;
-        public System.Data.SqlClient.SqlConnection SqlDbConection2;
-        public string cmd;
 
-        //++++++++++++++++Setup Function
-
-        public void DBSetup()
-        {
-            SqlDataAdapter = new System.Data.SqlClient.SqlDataAdapter();
-            SqlDbSelectCommand2 = new System.Data.SqlClient.SqlCommand();
-            SqlDbInsertCommand2 = new System.Data.SqlClient.SqlCommand();
-            SqlDbUpdateCommand2 = new System.Data.SqlClient.SqlCommand();
-            SqlDbDeleteCommand2 = new System.Data.SqlClient.SqlCommand();
-            SqlDbConection2 = new System.Data.SqlClient.SqlConnection();
-
-            SqlDataAdapter.SelectCommand = SqlDbSelectCommand2;
-            SqlDataAdapter.InsertCommand = SqlDbInsertCommand2;
-            SqlDataAdapter.UpdateCommand = SqlDbUpdateCommand2;
-            SqlDataAdapter.DeleteCommand = SqlDbDeleteCommand2;
-            //Variable and Switch Case made by Boyle
-            string compName = Environment.MachineName;
-            switch (compName)
-            {
-                case "CLEOPATRA":
-                    //Andrew Boyle's Computer
-                    SqlDbConection2.ConnectionString = "Data Source=CLEOPATRA;Initial Catalog=EmployeeDB;Integrated Security=True";
-                    break;
-                case "MORNINGSTAR":
-                    //Rusty's Computer
-                    SqlDbConection2.ConnectionString = "Data Source=MORNINGSTAR;Initial Catalog=employeeDB;Integrated Security=True;";
-                    break;
-                case "DESKTOP-RCIQMS7":
-                    //Osi's Computer
-                    SqlDbConection2.ConnectionString = "Data Source=DESKTOP-RCIQMS7;Initial Catalog=EmployeeDB;Integrated Security=True";
-                    break;
-                case "ANDREW":
-                    //Andrew Grosskurth's Computer
-                    SqlDbConection2.ConnectionString = "Data Source=ANDREW\\SQLEXPRESS;Initial Catalog=EmployeeDB;Integrated Security=True";
-                    break;
-                case "KYLE-TOSHIBA":
-                    //Kyle's Computer
-                    SqlDbConection2.ConnectionString = "Data Source=KYLE-TOSHIBA\\SQLEXPRESS;Initial Catalog=EmployeeDB;Integrated Security=True;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-                    break;
-                default:
-                    Console.WriteLine("No computer found");
-                    break;
-            }
-
-            //Code Below is the old code. If this works for all 5 computers this can be deleted -Boyle
-            //RUSTY-- SqlDbConection2.ConnectionString = "Data Source=MORNINGSTAR;Initial Catalog=employeeDB;Integrated Security=True;";
-            //SqlDbConection2.ConnectionString = "Data Source=DESKTOP-RCIQMS7;Initial Catalog=EmployeeDB;Integrated Security=True";
-            //SqlDbConection2.ConnectionString = "Data Source=ANDREW\\SQLEXPRESS;Initial Catalog=EmployeeDB;Integrated Security=True";
-            // Console.Out.WriteLine("Connection Established");
-        }//end DBSetup()-
-
+            //SelectDB Method for checking password to username. Changed by Rusty to incorporate DBConnect
+            //on 10/19/2016
         public void SelectDB()
         {
             _employeeId = getEmployeeId();
-            DBSetup();
+            d1.DBSetup();
                 
             //Console.WriteLine("After set up");
 
-            cmd = "Select* from EmpLog where EmpId ='" + getEmployeeId() + "'";
-            SqlDataAdapter.SelectCommand.CommandText = cmd;
-            SqlDataAdapter.SelectCommand.Connection = SqlDbConection2;
+            d1.cmd = "Select* from EmpLog where EmpId ='" + getEmployeeId() + "'";
+            d1.SqlDataAdapter.SelectCommand.CommandText = d1.cmd;
+            d1.SqlDataAdapter.SelectCommand.Connection = d1.SqlDbConection2;
             //Console.WriteLine(cmd);
             //This part starts the connection and executes sql
             try
             {
 
-                SqlDbConection2.Open();
+                d1.SqlDbConection2.Open();
                 //Console.Out.WriteLine("This Works");
                 System.Data.SqlClient.SqlDataReader dr;
                 //Console.Out.WriteLine("This Also Works");
-                dr = SqlDataAdapter.SelectCommand.ExecuteReader();
+                dr = d1.SqlDataAdapter.SelectCommand.ExecuteReader();
                 //Console.Out.WriteLine("The SQL Statement works");
 
                 //This tests if the sql statement can execute. If so, it validates the information.
@@ -150,7 +94,7 @@ namespace Tester
             //close the connection to the Database
             finally
             {
-                SqlDbConection2.Close();
+                d1.SqlDbConection2.Close();
             }
 
         }//End SelectDB()

@@ -22,8 +22,9 @@ namespace Tester
         {
             //instantiate Authentication 
             Authentication a1;
+            DBConnect d1 = new DBConnect();
             a1 = new Authentication("900254455", "123456");
-            a1.DBSetup();
+            d1.DBSetup();
             a1.SelectDB();
         }
         //=======Inccorect Button Click
