@@ -49,7 +49,7 @@ namespace Tester
                 
             //Console.WriteLine("After set up");
 
-            d1.cmd = "Select* from EmpLog where EmpId ='" + getEmployeeId() + "'";
+            d1.cmd = "Select * from EmpLog where EmpId ='" + getEmployeeId() + "'";
             d1.SqlDataAdapter.SelectCommand.CommandText = d1.cmd;
             d1.SqlDataAdapter.SelectCommand.Connection = d1.SqlDbConection2;
             //Console.WriteLine(cmd);

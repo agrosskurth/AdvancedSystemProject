@@ -34,6 +34,7 @@
             this.btnTime = new System.Windows.Forms.Button();
             this.btnInsertEmployee = new System.Windows.Forms.Button();
             this.BtnTimeSheet = new System.Windows.Forms.Button();
+            this.btnInsertTime = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCorrect
@@ -96,11 +97,22 @@
             this.BtnTimeSheet.UseVisualStyleBackColor = true;
             this.BtnTimeSheet.Click += new System.EventHandler(this.BtnTimeSheet_Click);
             // 
+            // btnInsertTime
+            // 
+            this.btnInsertTime.Location = new System.Drawing.Point(12, 177);
+            this.btnInsertTime.Name = "btnInsertTime";
+            this.btnInsertTime.Size = new System.Drawing.Size(98, 49);
+            this.btnInsertTime.TabIndex = 6;
+            this.btnInsertTime.Text = "Insert TimeIO";
+            this.btnInsertTime.UseVisualStyleBackColor = true;
+            this.btnInsertTime.Click += new System.EventHandler(this.btnInsertTime_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(295, 271);
+            this.Controls.Add(this.btnInsertTime);
             this.Controls.Add(this.BtnTimeSheet);
             this.Controls.Add(this.btnInsertEmployee);
             this.Controls.Add(this.btnTime);
@@ -121,6 +133,7 @@
         private System.Windows.Forms.Button btnTime;
         private System.Windows.Forms.Button btnInsertEmployee;
         private System.Windows.Forms.Button BtnTimeSheet;
+        private System.Windows.Forms.Button btnInsertTime;
     }
 }
 

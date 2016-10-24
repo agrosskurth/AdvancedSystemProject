@@ -152,13 +152,6 @@ namespace Tester
         {
             d1.DBSetup();
 
-            Console.WriteLine("After set up");
-
-            //This part starts the connection and executes sql
-            d1.cmd = "Select* from EmpInfo where EmpId ='" + id + "'";
-            d1.SqlDataAdapter.SelectCommand.CommandText = d1.cmd;
-            d1.SqlDataAdapter.SelectCommand.Connection = d1.SqlDbConection2;
-            Console.WriteLine(d1.cmd);
             try
             {
                 d1.stmt = new SqlCommand("INSERT INTO EmpInfo (EmpID, First_Name, Last_Name, Street, City, State_, Zipcode, EMail, NE, SR, HR, SRID, FullTime) VALUES (@EmpID, @First_Name, @Last_Name, @Street, @City, @State_, @Zipcode, @EMail, @NE, @SR, @HR, @SRID, @FullTime)");
@@ -178,7 +171,7 @@ namespace Tester
                 d1.SqlDbConection2.Open();
                 d1.stmt.Connection = d1.SqlDbConection2;
                 d1.stmt.ExecuteNonQuery();
-                Console.Out.WriteLine("New Employee Inserted");
+                Console.Out.WriteLine("It worked!");
             }
             catch (Exception ex)
             {

@@ -81,5 +81,12 @@ namespace Tester
             ts1.display();
 
         }
+
+        private void btnInsertTime_Click(object sender, EventArgs e)
+        {
+            TimeIO t1;
+            t1.insertTime = new TimeIO("900254555", new DateTime(2011, 2, 1, 2, 56, 00), new DateTime(2011, 2, 3, 3, 56, 00));
+            t1.Display();
+        }
     }//End Class
 }
