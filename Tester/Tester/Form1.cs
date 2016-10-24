@@ -17,7 +17,7 @@ namespace Tester
             InitializeComponent();
         }
 
-        //=======Correct Button Click
+        //===Correct Button Click===//
         private void btnCorrect_Click(object sender, EventArgs e)
         {
             //instantiate Authentication 
@@ -27,7 +27,7 @@ namespace Tester
             d1.DBSetup();
             a1.SelectDB();
         }
-        //=======Inccorect Button Click
+        //==Inccorect Button Click==//
         private void btnIncorrect_Click(object sender, EventArgs e)
         {
             //instatiate Authentication Object
@@ -38,7 +38,7 @@ namespace Tester
             d1.DBSetup();
             a1.SelectDB();
         }
-        //=======Em-Select
+        //=======Em-Select==========//
         private void btnSelectEmployee_Click(object sender, EventArgs e)
         {
             Employee e1;
@@ -46,7 +46,7 @@ namespace Tester
             e1.selectEmp("900254455");
             e1.Display();
         }
-        //=======Em-Insert
+        //=======Em-Insert==========//
         private void btnInsertEmployee_Click_1(object sender, EventArgs e)
         {
             Employee e1;
@@ -55,7 +55,7 @@ namespace Tester
             e1.Display();
         }
 
-        //=======Time
+        //===========Time==========//
         private void btnTime_Click(object sender, EventArgs e)
         {
             TimeIO t1;
@@ -70,7 +70,7 @@ namespace Tester
             t1.selectTime("900254455");
         }
 
-        //==========TimeSheet Test===========//
+        //======TimeSheet Test=====//
         private void BtnTimeSheet_Click(object sender, EventArgs e)
         {
             Timesheet ts1 = new Timesheet();
