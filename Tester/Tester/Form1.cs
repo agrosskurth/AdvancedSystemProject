@@ -69,6 +69,17 @@ namespace Tester
             t1 = new TimeIO();
             t1.selectTime("900254455");
         }
-        
+
+        //==========TimeSheet Test===========//
+        private void BtnTimeSheet_Click(object sender, EventArgs e)
+        {
+            Timesheet ts1 = new Timesheet();
+            ts1.addTimeIO(new TimeIO("900254455", new DateTime(2016, 10, 24, 8, 00, 00), new DateTime(2016, 10, 24, 1, 24, 00)));
+            ts1.addTimeIO(new TimeIO("900254455", new DateTime(2016, 10, 24, 1, 55, 00), new DateTime(2016, 10, 24, 5, 24, 00)));
+            ts1.addTimeIO(new TimeIO("900254455", new DateTime(2016, 10, 25, 8, 20, 00), new DateTime(2016, 10, 25, 3, 00, 00)));
+
+            ts1.display();
+
+        }
     }//End Class
 }

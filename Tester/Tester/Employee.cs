@@ -178,7 +178,7 @@ namespace Tester
                 d1.SqlDbConection2.Open();
                 d1.stmt.Connection = d1.SqlDbConection2;
                 d1.stmt.ExecuteNonQuery();
-                Console.Out.WriteLine("It worked!");
+                Console.Out.WriteLine("New Employee Inserted");
             }
             catch (Exception ex)
             {

@@ -33,11 +33,12 @@
             this.btnNew = new System.Windows.Forms.Button();
             this.btnTime = new System.Windows.Forms.Button();
             this.btnInsertEmployee = new System.Windows.Forms.Button();
+            this.BtnTimeSheet = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCorrect
             // 
-            this.btnCorrect.Location = new System.Drawing.Point(21, 24);
+            this.btnCorrect.Location = new System.Drawing.Point(24, 49);
             this.btnCorrect.Name = "btnCorrect";
             this.btnCorrect.Size = new System.Drawing.Size(98, 49);
             this.btnCorrect.TabIndex = 0;
@@ -47,7 +48,7 @@
             // 
             // btnIncorrect
             // 
-            this.btnIncorrect.Location = new System.Drawing.Point(21, 79);
+            this.btnIncorrect.Location = new System.Drawing.Point(24, 104);
             this.btnIncorrect.Name = "btnIncorrect";
             this.btnIncorrect.Size = new System.Drawing.Size(98, 49);
             this.btnIncorrect.TabIndex = 1;
@@ -57,7 +58,7 @@
             // 
             // btnNew
             // 
-            this.btnNew.Location = new System.Drawing.Point(158, 24);
+            this.btnNew.Location = new System.Drawing.Point(161, 49);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(98, 49);
             this.btnNew.TabIndex = 2;
@@ -67,7 +68,7 @@
             // 
             // btnTime
             // 
-            this.btnTime.Location = new System.Drawing.Point(21, 134);
+            this.btnTime.Location = new System.Drawing.Point(24, 159);
             this.btnTime.Name = "btnTime";
             this.btnTime.Size = new System.Drawing.Size(98, 49);
             this.btnTime.TabIndex = 3;
@@ -77,7 +78,7 @@
             // 
             // btnInsertEmployee
             // 
-            this.btnInsertEmployee.Location = new System.Drawing.Point(158, 79);
+            this.btnInsertEmployee.Location = new System.Drawing.Point(161, 104);
             this.btnInsertEmployee.Name = "btnInsertEmployee";
             this.btnInsertEmployee.Size = new System.Drawing.Size(98, 49);
             this.btnInsertEmployee.TabIndex = 4;
@@ -85,11 +86,22 @@
             this.btnInsertEmployee.UseVisualStyleBackColor = true;
             this.btnInsertEmployee.Click += new System.EventHandler(this.btnInsertEmployee_Click_1);
             // 
+            // BtnTimeSheet
+            // 
+            this.BtnTimeSheet.Location = new System.Drawing.Point(161, 159);
+            this.BtnTimeSheet.Name = "BtnTimeSheet";
+            this.BtnTimeSheet.Size = new System.Drawing.Size(98, 49);
+            this.BtnTimeSheet.TabIndex = 5;
+            this.BtnTimeSheet.Text = "Add TimeSheet";
+            this.BtnTimeSheet.UseVisualStyleBackColor = true;
+            this.BtnTimeSheet.Click += new System.EventHandler(this.BtnTimeSheet_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.BtnTimeSheet);
             this.Controls.Add(this.btnInsertEmployee);
             this.Controls.Add(this.btnTime);
             this.Controls.Add(this.btnNew);
@@ -108,6 +120,7 @@
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Button btnTime;
         private System.Windows.Forms.Button btnInsertEmployee;
+        private System.Windows.Forms.Button BtnTimeSheet;
     }
 }
 
