@@ -49,7 +49,7 @@ namespace Tester
                     getTS().Add(t1);
                 }
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine("Something happened: " + e);
             }
@@ -61,7 +61,7 @@ namespace Tester
 
         public void display()
         {
-            for(int x = 0; x<ts.Count(); x++)
+            for (int x = 0; x < ts.Count(); x++)
             {
                 Console.WriteLine("EMPLOYEE -- " + ts[x].getId());
                 Console.WriteLine("TIME IN  -- " + ts[x].getClockIn());
