@@ -73,10 +73,10 @@ namespace Tester
         //======TimeSheet Test=====//
         private void BtnTimeSheet_Click(object sender, EventArgs e)
         {
-            Timesheet ts1 = new Timesheet();
-            ts1.addTimeIO(new TimeIO("900254455", new DateTime(2016, 10, 24, 8, 00, 00), new DateTime(2016, 10, 24, 1, 24, 00)));
-            ts1.addTimeIO(new TimeIO("900254455", new DateTime(2016, 10, 24, 1, 55, 00), new DateTime(2016, 10, 24, 5, 24, 00)));
-            ts1.addTimeIO(new TimeIO("900254455", new DateTime(2016, 10, 25, 8, 20, 00), new DateTime(2016, 10, 25, 3, 00, 00)));
+            TimeSheet ts1 = new TimeSheet();
+           // ts1.addTimeIO(new TimeIO("900254455", new DateTime(2016, 10, 24, 8, 00, 00), new DateTime(2016, 10, 24, 1, 24, 00)));
+           // ts1.addTimeIO(new TimeIO("900254455", new DateTime(2016, 10, 24, 1, 55, 00), new DateTime(2016, 10, 24, 5, 24, 00)));
+           // ts1.addTimeIO(new TimeIO("900254455", new DateTime(2016, 10, 25, 8, 20, 00), new DateTime(2016, 10, 25, 3, 00, 00)));
 
             ts1.display();
 
@@ -85,8 +85,16 @@ namespace Tester
         private void btnInsertTime_Click(object sender, EventArgs e)
         {
             TimeIO t1;
-            t1.insertTime = new TimeIO("900254555", new DateTime(2011, 2, 1, 2, 56, 00), new DateTime(2011, 2, 3, 3, 56, 00));
-            t1.Display();
+         //   t1.insertTime = new TimeIO("900254555", new DateTime(2011, 2, 1, 2, 56, 00), new DateTime(2011, 2, 3, 3, 56, 00));
+         //   t1.display();
+        }
+
+        private void btnUpEmp_Click(object sender, EventArgs e)
+        {
+            Employee e1;
+            Employee e2;
+            e2 = new Employee("900254666", "Ryu", "Hoshi", "Hadoken!", "Shryuken!", "Jp", "22882", "Street.Fighter@cap.com", true, true, false, "900123123", false);
+            e2.updateEmp();
         }
     }//End Class
 }

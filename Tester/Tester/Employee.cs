@@ -183,9 +183,55 @@ namespace Tester
             }
         }
 
-        //---------UpdateEmp
+        //---------UpdateEmp-----------
+        //Created by Rusty J. Hodge 10/31/2016
         public void updateEmp()
         {
+            //Call DBSetup, establish connection
+            d1.DBSetup();
+            //SQL Update Statement
+            d1.cmd = "Update EmpInfo set First_Name ='" + getFName() + "'," +
+                "Last_Name ='" + getLName() + "'," +
+                "Street ='" + getStreet() + "'," +
+                "City ='" + getCity() + "'," +
+                "State_ ='" + getState() + "'," +
+                "ZipCode ='" + getZip() + "'," +
+                "Email ='" + getEmail() + "'," +
+                "NE ='" + getNE() + "'," +
+                "SR ='" + getSR() + "'," +
+                "HR ='" + getHR() + "'," +
+                "SRID = '" + getSRID() + "'," +
+                "FullTime ='" + getFuTime() + "'" +
+                " Where EmpID ='" + getId() + "'";
+            d1.SqlDataAdapter.UpdateCommand.CommandText = d1.cmd;
+            d1.SqlDataAdapter.UpdateCommand.Connection = d1.SqlDbConection2;
+            //Confirm SQL statement
+            Console.WriteLine(d1.cmd);
+            try
+            {
+                //open connection
+                d1.SqlDbConection2.Open();
+
+                //try command
+                int n = d1.SqlDataAdapter.UpdateCommand.ExecuteNonQuery();
+                if (n == 1)
+                {
+                    Console.WriteLine("Data Updated");
+                }
+                else
+                {
+                    Console.WriteLine("ERROR: Updating Data");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                //Close Connection
+                d1.SqlDbConection2.Close();
+            }
 
         }
         //---------DeleteEmp

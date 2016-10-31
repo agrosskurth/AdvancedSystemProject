@@ -35,6 +35,7 @@
             this.btnInsertEmployee = new System.Windows.Forms.Button();
             this.BtnTimeSheet = new System.Windows.Forms.Button();
             this.btnInsertTime = new System.Windows.Forms.Button();
+            this.btnUpEmp = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCorrect
@@ -107,11 +108,22 @@
             this.btnInsertTime.UseVisualStyleBackColor = true;
             this.btnInsertTime.Click += new System.EventHandler(this.btnInsertTime_Click);
             // 
+            // btnUpEmp
+            // 
+            this.btnUpEmp.Location = new System.Drawing.Point(149, 177);
+            this.btnUpEmp.Name = "btnUpEmp";
+            this.btnUpEmp.Size = new System.Drawing.Size(98, 49);
+            this.btnUpEmp.TabIndex = 7;
+            this.btnUpEmp.Text = "Update Employee";
+            this.btnUpEmp.UseVisualStyleBackColor = true;
+            this.btnUpEmp.Click += new System.EventHandler(this.btnUpEmp_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(295, 271);
+            this.Controls.Add(this.btnUpEmp);
             this.Controls.Add(this.btnInsertTime);
             this.Controls.Add(this.BtnTimeSheet);
             this.Controls.Add(this.btnInsertEmployee);
@@ -134,6 +146,7 @@
         private System.Windows.Forms.Button btnInsertEmployee;
         private System.Windows.Forms.Button BtnTimeSheet;
         private System.Windows.Forms.Button btnInsertTime;
+        private System.Windows.Forms.Button btnUpEmp;
     }
 }
 
