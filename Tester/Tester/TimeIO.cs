@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Data.SqlClient;
 using System.Threading.Tasks;
 
 namespace Tester
@@ -9,7 +10,7 @@ namespace Tester
     class TimeIO
     {
         //=============Properties===========//
-        String id;
+        String id, reasonOut;
         DateTime clockIn;
         DateTime clockOut;
         private DBConnect d1 = new DBConnect();
@@ -19,15 +20,17 @@ namespace Tester
         public TimeIO()
         {
             id = "";
-            //clockIn = new DateTime(0, 0, 0, 0, 0, 0);
-            //clockOut = new DateTime(0, 0, 0, 0, 0, 0);
+            clockIn = new DateTime(0, 0, 0, 0, 0, 0);
+            clockOut = new DateTime(0, 0, 0, 0, 0, 0);
+            reasonOut = "";
         }
 
-        public TimeIO(String i, DateTime ci, DateTime co)
+        public TimeIO(String i, DateTime ci, DateTime co, String r)
         {
             setId(i);
             setClockIn(ci);
             setClockOut(co);
+            setReasonOut(r);
         }
 
         //==========Behaviors===========//
@@ -42,10 +45,12 @@ namespace Tester
         public void setId(String i) { id = i; }
         public void setClockIn(DateTime ci) { clockIn = ci; }
         public void setClockOut(DateTime co) { clockOut = co; }
+        public void setReasonOut(String r) { reasonOut = r; }
 
         public String getId() { return id; }
         public DateTime getClockIn() { return clockIn; }
         public DateTime getClockOut() { return clockOut; }
+        public String getReasonOut() { return reasonOut; }
 
         //format date time 
 
@@ -79,8 +84,6 @@ namespace Tester
                     Console.WriteLine("DATE: " + dr.GetValue(1).ToString());
                     Console.WriteLine("IN: " + dr.GetValue(2).ToString());
                     Console.WriteLine("OUT: " + dr.GetValue(3).ToString());
-
-
                 }
 
             }
@@ -92,8 +95,36 @@ namespace Tester
                 d1.SqlDbConection2.Close();
             }
         }
-        public void insertTime(string _id)
+
+        //Created By Rusty J. Hodge 10/31/2016
+        //This method inserts a clock in/out with the associated ID and reason  
+        public void insertTime()
         {
+            //connect to database
+            d1.DBSetup();
+            try
+            {
+                //SQL Insert Statement
+                d1.stmt = new SqlCommand("INSERT INTO EmpTime (EmpID, TimeIn, TimeOut, ReasonOut) VALUES (@EmpID, @TimeIn, @TimeOut, @ReasonOut)");
+                d1.stmt.Parameters.AddWithValue("@EmpID", getId());
+                d1.stmt.Parameters.AddWithValue("@TimeIn", getClockIn());
+                d1.stmt.Parameters.AddWithValue("@TimeOut", getClockOut());
+                d1.stmt.Parameters.AddWithValue("@ReasonOut", getReasonOut());
+                d1.SqlDbConection2.Open();
+                d1.stmt.Connection = d1.SqlDbConection2;
+                
+                //Execute Insert Command
+                d1.stmt.ExecuteNonQuery();
+                Console.Out.WriteLine("It worked!");
+            }
+            catch (Exception ex)
+            {
+                Console.Out.WriteLine("Something happened: " + ex);
+            }
+            finally
+            {
+                d1.SqlDbConection2.Close();
+            }
 
         }
         //I just realized that updating the time might be tricky. How we will determine what needs to be updated? 
