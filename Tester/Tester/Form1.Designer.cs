@@ -36,6 +36,7 @@
             this.BtnTimeSheet = new System.Windows.Forms.Button();
             this.btnInsertTime = new System.Windows.Forms.Button();
             this.btnUpEmp = new System.Windows.Forms.Button();
+            this.btnDelTimeIO = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCorrect
@@ -90,7 +91,7 @@
             // 
             // BtnTimeSheet
             // 
-            this.BtnTimeSheet.Location = new System.Drawing.Point(149, 122);
+            this.BtnTimeSheet.Location = new System.Drawing.Point(149, 177);
             this.BtnTimeSheet.Name = "BtnTimeSheet";
             this.BtnTimeSheet.Size = new System.Drawing.Size(98, 49);
             this.BtnTimeSheet.TabIndex = 5;
@@ -110,7 +111,7 @@
             // 
             // btnUpEmp
             // 
-            this.btnUpEmp.Location = new System.Drawing.Point(149, 177);
+            this.btnUpEmp.Location = new System.Drawing.Point(149, 122);
             this.btnUpEmp.Name = "btnUpEmp";
             this.btnUpEmp.Size = new System.Drawing.Size(98, 49);
             this.btnUpEmp.TabIndex = 7;
@@ -118,11 +119,22 @@
             this.btnUpEmp.UseVisualStyleBackColor = true;
             this.btnUpEmp.Click += new System.EventHandler(this.btnUpEmp_Click);
             // 
+            // btnDelTimeIO
+            // 
+            this.btnDelTimeIO.Location = new System.Drawing.Point(12, 232);
+            this.btnDelTimeIO.Name = "btnDelTimeIO";
+            this.btnDelTimeIO.Size = new System.Drawing.Size(98, 49);
+            this.btnDelTimeIO.TabIndex = 8;
+            this.btnDelTimeIO.Text = "Delete TimeIO";
+            this.btnDelTimeIO.UseVisualStyleBackColor = true;
+            this.btnDelTimeIO.Click += new System.EventHandler(this.btnDelTimeIO_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(295, 271);
+            this.ClientSize = new System.Drawing.Size(295, 302);
+            this.Controls.Add(this.btnDelTimeIO);
             this.Controls.Add(this.btnUpEmp);
             this.Controls.Add(this.btnInsertTime);
             this.Controls.Add(this.BtnTimeSheet);
@@ -147,6 +159,7 @@
         private System.Windows.Forms.Button BtnTimeSheet;
         private System.Windows.Forms.Button btnInsertTime;
         private System.Windows.Forms.Button btnUpEmp;
+        private System.Windows.Forms.Button btnDelTimeIO;
     }
 }
 

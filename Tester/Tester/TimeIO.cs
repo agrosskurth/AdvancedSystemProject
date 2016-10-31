@@ -169,6 +169,44 @@ namespace Tester
                 d1.SqlDbConection2.Close();
             }
         }
+
+        //Created By Rusty J. Hodge on 10/31/2016
+        //DeleteTime Method for removing specific entries in the EmpTime table
+        public void deleteTime()
+        {
+            //Establish Connection
+            d1.DBSetup();
+
+            //SQL Delete Statement
+            d1.cmd = "Delete from EmpTime Where EmpID = " + getId();
+            d1.SqlDataAdapter.DeleteCommand.CommandText = d1.cmd;
+            d1.SqlDataAdapter.DeleteCommand.Connection = d1.SqlDbConection2;
+            Console.WriteLine(d1.cmd);
+            try
+            {
+                d1.SqlDbConection2.Open();
+
+                //Execute Delete Command
+                int n = d1.SqlDataAdapter.DeleteCommand.ExecuteNonQuery();
+                if (n == 1)
+                {
+                    Console.WriteLine("Data Deleted");
+                }
+                else
+                {
+                    Console.WriteLine("ERROR: Deleting Data");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                //Close Connection
+                d1.SqlDbConection2.Close();
+            }
+        }
         //I just realized that updating the time might be tricky. How we will determine what needs to be updated? 
     }
 }
