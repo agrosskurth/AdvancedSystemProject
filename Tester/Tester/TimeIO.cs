@@ -127,6 +127,48 @@ namespace Tester
             }
 
         }
+
+        //Created by Rusty J. Hodge on 10/31/2016
+        //Update a specific timein/out
+        public void updateTime()
+        {
+            //Call DBSetup, establish connection
+            d1.DBSetup();
+            //SQL Update Statement
+            d1.cmd = "Update EmpTime set TimeIn ='" + getClockIn() + "'," +
+                "TimeOut ='" + getClockOut() + "'," +
+                "ReasonOut ='" + getReasonOut() + "'" +
+                " Where EmpID ='" + getId() + "'";
+            d1.SqlDataAdapter.UpdateCommand.CommandText = d1.cmd;
+            d1.SqlDataAdapter.UpdateCommand.Connection = d1.SqlDbConection2;
+            //Confirm SQL statement
+            Console.WriteLine(d1.cmd);
+            try
+            {
+                //open connection
+                d1.SqlDbConection2.Open();
+
+                //try command
+                int n = d1.SqlDataAdapter.UpdateCommand.ExecuteNonQuery();
+                if (n == 1)
+                {
+                    Console.WriteLine("Data Updated");
+                }
+                else
+                {
+                    Console.WriteLine("ERROR: Updating Data");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
+            finally
+            {
+                //Close Connection
+                d1.SqlDbConection2.Close();
+            }
+        }
         //I just realized that updating the time might be tricky. How we will determine what needs to be updated? 
     }
 }
