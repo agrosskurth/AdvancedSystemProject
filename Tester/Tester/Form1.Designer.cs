@@ -37,11 +37,16 @@
             this.btnInsertTime = new System.Windows.Forms.Button();
             this.btnUpEmp = new System.Windows.Forms.Button();
             this.btnDelTimeIO = new System.Windows.Forms.Button();
+            this.btnUpTimeIO = new System.Windows.Forms.Button();
+            this.lblAuthentication = new System.Windows.Forms.Label();
+            this.lblEmployee = new System.Windows.Forms.Label();
+            this.lblTimeIO = new System.Windows.Forms.Label();
+            this.lblTimeSheet = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnCorrect
             // 
-            this.btnCorrect.Location = new System.Drawing.Point(12, 12);
+            this.btnCorrect.Location = new System.Drawing.Point(12, 42);
             this.btnCorrect.Name = "btnCorrect";
             this.btnCorrect.Size = new System.Drawing.Size(98, 49);
             this.btnCorrect.TabIndex = 0;
@@ -51,7 +56,7 @@
             // 
             // btnIncorrect
             // 
-            this.btnIncorrect.Location = new System.Drawing.Point(12, 67);
+            this.btnIncorrect.Location = new System.Drawing.Point(12, 97);
             this.btnIncorrect.Name = "btnIncorrect";
             this.btnIncorrect.Size = new System.Drawing.Size(98, 49);
             this.btnIncorrect.TabIndex = 1;
@@ -61,7 +66,7 @@
             // 
             // btnNew
             // 
-            this.btnNew.Location = new System.Drawing.Point(149, 12);
+            this.btnNew.Location = new System.Drawing.Point(116, 42);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(98, 49);
             this.btnNew.TabIndex = 2;
@@ -71,7 +76,7 @@
             // 
             // btnTime
             // 
-            this.btnTime.Location = new System.Drawing.Point(12, 122);
+            this.btnTime.Location = new System.Drawing.Point(220, 42);
             this.btnTime.Name = "btnTime";
             this.btnTime.Size = new System.Drawing.Size(98, 49);
             this.btnTime.TabIndex = 3;
@@ -81,7 +86,7 @@
             // 
             // btnInsertEmployee
             // 
-            this.btnInsertEmployee.Location = new System.Drawing.Point(149, 67);
+            this.btnInsertEmployee.Location = new System.Drawing.Point(116, 97);
             this.btnInsertEmployee.Name = "btnInsertEmployee";
             this.btnInsertEmployee.Size = new System.Drawing.Size(98, 49);
             this.btnInsertEmployee.TabIndex = 4;
@@ -91,7 +96,7 @@
             // 
             // BtnTimeSheet
             // 
-            this.BtnTimeSheet.Location = new System.Drawing.Point(149, 177);
+            this.BtnTimeSheet.Location = new System.Drawing.Point(324, 42);
             this.BtnTimeSheet.Name = "BtnTimeSheet";
             this.BtnTimeSheet.Size = new System.Drawing.Size(98, 49);
             this.BtnTimeSheet.TabIndex = 5;
@@ -101,7 +106,7 @@
             // 
             // btnInsertTime
             // 
-            this.btnInsertTime.Location = new System.Drawing.Point(12, 177);
+            this.btnInsertTime.Location = new System.Drawing.Point(220, 97);
             this.btnInsertTime.Name = "btnInsertTime";
             this.btnInsertTime.Size = new System.Drawing.Size(98, 49);
             this.btnInsertTime.TabIndex = 6;
@@ -111,7 +116,7 @@
             // 
             // btnUpEmp
             // 
-            this.btnUpEmp.Location = new System.Drawing.Point(149, 122);
+            this.btnUpEmp.Location = new System.Drawing.Point(116, 152);
             this.btnUpEmp.Name = "btnUpEmp";
             this.btnUpEmp.Size = new System.Drawing.Size(98, 49);
             this.btnUpEmp.TabIndex = 7;
@@ -121,7 +126,7 @@
             // 
             // btnDelTimeIO
             // 
-            this.btnDelTimeIO.Location = new System.Drawing.Point(12, 232);
+            this.btnDelTimeIO.Location = new System.Drawing.Point(220, 207);
             this.btnDelTimeIO.Name = "btnDelTimeIO";
             this.btnDelTimeIO.Size = new System.Drawing.Size(98, 49);
             this.btnDelTimeIO.TabIndex = 8;
@@ -129,11 +134,62 @@
             this.btnDelTimeIO.UseVisualStyleBackColor = true;
             this.btnDelTimeIO.Click += new System.EventHandler(this.btnDelTimeIO_Click);
             // 
+            // btnUpTimeIO
+            // 
+            this.btnUpTimeIO.Location = new System.Drawing.Point(220, 152);
+            this.btnUpTimeIO.Name = "btnUpTimeIO";
+            this.btnUpTimeIO.Size = new System.Drawing.Size(98, 49);
+            this.btnUpTimeIO.TabIndex = 9;
+            this.btnUpTimeIO.Text = "Update TimeIO";
+            this.btnUpTimeIO.UseVisualStyleBackColor = true;
+            this.btnUpTimeIO.Click += new System.EventHandler(this.btnUpTimeIO_Click);
+            // 
+            // lblAuthentication
+            // 
+            this.lblAuthentication.AutoSize = true;
+            this.lblAuthentication.Location = new System.Drawing.Point(25, 17);
+            this.lblAuthentication.Name = "lblAuthentication";
+            this.lblAuthentication.Size = new System.Drawing.Size(75, 13);
+            this.lblAuthentication.TabIndex = 10;
+            this.lblAuthentication.Text = "Authentication";
+            // 
+            // lblEmployee
+            // 
+            this.lblEmployee.AutoSize = true;
+            this.lblEmployee.Location = new System.Drawing.Point(140, 17);
+            this.lblEmployee.Name = "lblEmployee";
+            this.lblEmployee.Size = new System.Drawing.Size(53, 13);
+            this.lblEmployee.TabIndex = 11;
+            this.lblEmployee.Text = "Employee";
+            // 
+            // lblTimeIO
+            // 
+            this.lblTimeIO.AutoSize = true;
+            this.lblTimeIO.Location = new System.Drawing.Point(251, 17);
+            this.lblTimeIO.Name = "lblTimeIO";
+            this.lblTimeIO.Size = new System.Drawing.Size(41, 13);
+            this.lblTimeIO.TabIndex = 12;
+            this.lblTimeIO.Text = "TimeIO";
+            // 
+            // lblTimeSheet
+            // 
+            this.lblTimeSheet.AutoSize = true;
+            this.lblTimeSheet.Location = new System.Drawing.Point(346, 17);
+            this.lblTimeSheet.Name = "lblTimeSheet";
+            this.lblTimeSheet.Size = new System.Drawing.Size(61, 13);
+            this.lblTimeSheet.TabIndex = 13;
+            this.lblTimeSheet.Text = "Time Sheet";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(295, 302);
+            this.ClientSize = new System.Drawing.Size(438, 273);
+            this.Controls.Add(this.lblTimeSheet);
+            this.Controls.Add(this.lblTimeIO);
+            this.Controls.Add(this.lblEmployee);
+            this.Controls.Add(this.lblAuthentication);
+            this.Controls.Add(this.btnUpTimeIO);
             this.Controls.Add(this.btnDelTimeIO);
             this.Controls.Add(this.btnUpEmp);
             this.Controls.Add(this.btnInsertTime);
@@ -144,8 +200,10 @@
             this.Controls.Add(this.btnIncorrect);
             this.Controls.Add(this.btnCorrect);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Tester";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -160,6 +218,11 @@
         private System.Windows.Forms.Button btnInsertTime;
         private System.Windows.Forms.Button btnUpEmp;
         private System.Windows.Forms.Button btnDelTimeIO;
+        private System.Windows.Forms.Button btnUpTimeIO;
+        private System.Windows.Forms.Label lblAuthentication;
+        private System.Windows.Forms.Label lblEmployee;
+        private System.Windows.Forms.Label lblTimeIO;
+        private System.Windows.Forms.Label lblTimeSheet;
     }
 }
 

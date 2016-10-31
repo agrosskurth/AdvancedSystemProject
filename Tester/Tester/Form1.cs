@@ -98,5 +98,17 @@ namespace Tester
             t1 = new TimeIO("900254666", new DateTime(2011, 2, 1, 2, 56, 00), new DateTime(2011, 2, 3, 3, 56, 00), "Lunch");
             t1.deleteTime();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUpTimeIO_Click(object sender, EventArgs e)
+        {
+            TimeIO t1;
+            t1 = new TimeIO("900254666", new DateTime(2011, 2, 1, 2, 56, 00), new DateTime(2011, 2, 3, 3, 56, 00), "Lunch");
+            t1.updateTime();
+        }
     }//End Class
 }
