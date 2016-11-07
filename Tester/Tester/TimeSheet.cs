@@ -45,7 +45,7 @@ namespace Tester
 
                 while (dr.Read())
                 {
-                    TimeIO t1 = new TimeIO((String)dr.GetValue(1), (DateTime)dr.GetValue(2), (DateTime)dr.GetValue(3), (String)dr.GetValue(4));
+                    TimeIO t1 = new TimeIO(((String)dr.GetValue(1)), (DateTime)dr.GetValue(2), (DateTime)dr.GetValue(3), (String)dr.GetValue(4), (int)dr.GetValue(0));
                     getTS().Add(t1);
                 }
             }

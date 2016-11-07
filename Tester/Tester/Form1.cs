@@ -59,7 +59,7 @@ namespace Tester
         private void btnTime_Click(object sender, EventArgs e)
         {
             TimeIO t1;
-            t1 = new TimeIO("900254666", new DateTime(2011, 2, 5, 4, 56, 00), new DateTime(2011, 2, 5, 6, 56, 00), "Doctor");
+            t1 = new TimeIO("900254666", new DateTime(2011, 2, 5, 4, 56, 00), new DateTime(2011, 2, 5, 6, 56, 00), "Doctor", 123);
             t1.Display();
             t1.insertTime();
             t1.selectTime("900254666");
@@ -74,10 +74,11 @@ namespace Tester
 
         }
 
+        //====
         private void btnInsertTime_Click(object sender, EventArgs e)
         {
             TimeIO t1;
-            t1 = new TimeIO("900254666", new DateTime(2011, 2, 1, 2, 56, 00), new DateTime(2011, 2, 3, 3, 56, 00), "Lunch");
+            t1 = new TimeIO("900254666", new DateTime(2011, 2, 1, 2, 56, 00), new DateTime(2011, 2, 3, 3, 56, 00), "Lunch", 000);
             t1.insertTime();
             t1.Display();
         }
@@ -92,7 +93,7 @@ namespace Tester
         private void btnDelTimeIO_Click(object sender, EventArgs e)
         {
             TimeIO t1;
-            t1 = new TimeIO("900254666", new DateTime(2011, 2, 1, 2, 56, 00), new DateTime(2011, 2, 3, 3, 56, 00), "Lunch");
+            t1 = new TimeIO("900254666", new DateTime(2011, 2, 1, 2, 56, 00), new DateTime(2011, 2, 3, 3, 56, 00), "Lunch", 23);
             t1.deleteTime();
         }
 
@@ -104,7 +105,7 @@ namespace Tester
         private void btnUpTimeIO_Click(object sender, EventArgs e)
         {
             TimeIO t1;
-            t1 = new TimeIO("900254666", new DateTime(2011, 2, 1, 2, 56, 00), new DateTime(2011, 2, 3, 3, 56, 00), "Lunch");
+            t1 = new TimeIO("900254666", new DateTime(2011, 2, 1, 2, 56, 00), new DateTime(2011, 2, 3, 3, 56, 00), "Lunch", 9);
             t1.updateTime();
         }
     }//End Class
