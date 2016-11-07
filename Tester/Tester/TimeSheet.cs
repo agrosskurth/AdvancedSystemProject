@@ -33,7 +33,7 @@ namespace Tester
         {
             d1.DBSetup();
 
-            d1.cmd = "Select* from EmpTime where EmpId ='" + id + "'";
+            d1.cmd = "Select * from EmpTime where EmpId ='" + id + "'";
             d1.SqlDataAdapter.SelectCommand.CommandText = d1.cmd;
             d1.SqlDataAdapter.SelectCommand.Connection = d1.SqlDbConection2;
             try
@@ -45,7 +45,7 @@ namespace Tester
 
                 while (dr.Read())
                 {
-                    TimeIO t1 = new TimeIO((String)dr.GetValue(0), (DateTime)dr.GetValue(1), (DateTime)dr.GetValue(2), (String)dr.GetValue(3));
+                    TimeIO t1 = new TimeIO((String)dr.GetValue(1), (DateTime)dr.GetValue(2), (DateTime)dr.GetValue(3), (String)dr.GetValue(4));
                     getTS().Add(t1);
                 }
             }
@@ -66,6 +66,7 @@ namespace Tester
                 Console.WriteLine("EMPLOYEE -- " + ts[x].getId());
                 Console.WriteLine("TIME IN  -- " + ts[x].getClockIn());
                 Console.WriteLine("TIME OUT -- " + ts[x].getClockOut());
+                Console.WriteLine("Reason Out -- " + ts[x].getReasonOut());
             }
         }
     }
