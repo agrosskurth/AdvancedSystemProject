@@ -14,6 +14,7 @@ namespace Tester
         DateTime clockIn;
         DateTime clockOut;
         private DBConnect d1 = new DBConnect();
+        private int entId;
 
 
         //=========Constructors============//
@@ -23,14 +24,16 @@ namespace Tester
             clockIn = new DateTime(0, 0, 0, 0, 0, 0);
             clockOut = new DateTime(0, 0, 0, 0, 0, 0);
             reasonOut = "";
+            entId = 00;
         }
 
-        public TimeIO(String i, DateTime ci, DateTime co, String r)
+        public TimeIO(String i, DateTime ci, DateTime co, String r, int e)
         {
             setId(i);
             setClockIn(ci);
             setClockOut(co);
             setReasonOut(r);
+            setEntId(e);
         }
 
         //==========Behaviors===========//
@@ -46,11 +49,13 @@ namespace Tester
         public void setClockIn(DateTime ci) { clockIn = ci; }
         public void setClockOut(DateTime co) { clockOut = co; }
         public void setReasonOut(String r) { reasonOut = r; }
+        public void setEntId(int e) { entId = e; }
 
         public String getId() { return id; }
         public DateTime getClockIn() { return clockIn; }
         public DateTime getClockOut() { return clockOut; }
         public String getReasonOut() { return reasonOut; }
+        public int getEntId() { return entId; }
 
         //format date time 
 
@@ -138,7 +143,7 @@ namespace Tester
             d1.cmd = "Update EmpTime set TimeIn ='" + getClockIn() + "'," +
                 "TimeOut ='" + getClockOut() + "'," +
                 "ReasonOut ='" + getReasonOut() + "'" +
-                " Where EmpID ='" + getId() + "'";
+                " Where EntryID ='" + getEntId() + "'";
             d1.SqlDataAdapter.UpdateCommand.CommandText = d1.cmd;
             d1.SqlDataAdapter.UpdateCommand.Connection = d1.SqlDbConection2;
             //Confirm SQL statement
@@ -178,7 +183,7 @@ namespace Tester
             d1.DBSetup();
 
             //SQL Delete Statement
-            d1.cmd = "Delete from EmpTime Where EmpID = " + getId();
+            d1.cmd = "Delete from EmpTime Where EntryID = " + getEntId();
             d1.SqlDataAdapter.DeleteCommand.CommandText = d1.cmd;
             d1.SqlDataAdapter.DeleteCommand.Connection = d1.SqlDbConection2;
             Console.WriteLine(d1.cmd);

@@ -100,7 +100,7 @@
             this.BtnTimeSheet.Name = "BtnTimeSheet";
             this.BtnTimeSheet.Size = new System.Drawing.Size(98, 49);
             this.BtnTimeSheet.TabIndex = 5;
-            this.BtnTimeSheet.Text = "Create TimeSheet";
+            this.BtnTimeSheet.Text = "Create Time Sheet";
             this.BtnTimeSheet.UseVisualStyleBackColor = true;
             this.BtnTimeSheet.Click += new System.EventHandler(this.BtnTimeSheet_Click);
             // 

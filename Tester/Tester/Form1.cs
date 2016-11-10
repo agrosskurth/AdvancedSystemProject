@@ -59,7 +59,7 @@ namespace Tester
         private void btnTime_Click(object sender, EventArgs e)
         {
             TimeIO t1;
-            t1 = new TimeIO("900254666", new DateTime(2011, 2, 5, 4, 56, 00), new DateTime(2011, 2, 5, 6, 56, 00), "Doctor");
+            t1 = new TimeIO("900254666", new DateTime(2011, 2, 5, 4, 56, 00), new DateTime(2011, 2, 5, 6, 56, 00), "Doctor", 123);
             t1.Display();
             t1.insertTime();
             t1.selectTime("900254666");
@@ -69,18 +69,16 @@ namespace Tester
         private void BtnTimeSheet_Click(object sender, EventArgs e)
         {
             TimeSheet ts1 = new TimeSheet();
-           // ts1.addTimeIO(new TimeIO("900254455", new DateTime(2016, 10, 24, 8, 00, 00), new DateTime(2016, 10, 24, 1, 24, 00)));
-           // ts1.addTimeIO(new TimeIO("900254455", new DateTime(2016, 10, 24, 1, 55, 00), new DateTime(2016, 10, 24, 5, 24, 00)));
-           // ts1.addTimeIO(new TimeIO("900254455", new DateTime(2016, 10, 25, 8, 20, 00), new DateTime(2016, 10, 25, 3, 00, 00)));
-
+            ts1.timeSheetSelect("900254666");
             ts1.display();
 
         }
 
+        //====
         private void btnInsertTime_Click(object sender, EventArgs e)
         {
             TimeIO t1;
-            t1 = new TimeIO("900254666", new DateTime(2011, 2, 1, 2, 56, 00), new DateTime(2011, 2, 3, 3, 56, 00), "Lunch");
+            t1 = new TimeIO("900254666", new DateTime(2011, 2, 1, 2, 56, 00), new DateTime(2011, 2, 3, 3, 56, 00), "Lunch", 000);
             t1.insertTime();
             t1.Display();
         }
@@ -95,7 +93,7 @@ namespace Tester
         private void btnDelTimeIO_Click(object sender, EventArgs e)
         {
             TimeIO t1;
-            t1 = new TimeIO("900254666", new DateTime(2011, 2, 1, 2, 56, 00), new DateTime(2011, 2, 3, 3, 56, 00), "Lunch");
+            t1 = new TimeIO("900254666", new DateTime(2011, 2, 1, 2, 56, 00), new DateTime(2011, 2, 3, 3, 56, 00), "Lunch", 23);
             t1.deleteTime();
         }
 
@@ -107,7 +105,7 @@ namespace Tester
         private void btnUpTimeIO_Click(object sender, EventArgs e)
         {
             TimeIO t1;
-            t1 = new TimeIO("900254666", new DateTime(2011, 2, 1, 2, 56, 00), new DateTime(2011, 2, 3, 3, 56, 00), "Lunch");
+            t1 = new TimeIO("900254666", new DateTime(2011, 2, 1, 2, 56, 00), new DateTime(2011, 2, 3, 3, 56, 00), "Lunch", 9);
             t1.updateTime();
         }
     }//End Class
