@@ -31,3 +31,36 @@ C:\Users\o4ndu\Desktop\Project - A\WebTimeSheet\WebTimeSheet\bin\Microsoft.CodeD
 C:\Users\o4ndu\Desktop\Project - A\WebTimeSheet\WebTimeSheet\obj\Debug\WebTimeSheet.csprojResolveAssemblyReference.cache
 C:\Users\o4ndu\Desktop\Project - A\WebTimeSheet\WebTimeSheet\obj\Debug\WebTimeSheet.dll
 C:\Users\o4ndu\Desktop\Project - A\WebTimeSheet\WebTimeSheet\obj\Debug\WebTimeSheet.pdb
+C:\Users\o4ndu\Desktop\Project\AdvancedSystemProject\WebTimeSheet\WebTimeSheet\obj\Debug\WebTimeSheet.csprojResolveAssemblyReference.cache
+C:\Users\o4ndu\Desktop\Project\AdvancedSystemProject\WebTimeSheet\WebTimeSheet\obj\Debug\WebTimeSheet.dll
+C:\Users\o4ndu\Desktop\Project\AdvancedSystemProject\WebTimeSheet\WebTimeSheet\obj\Debug\WebTimeSheet.pdb
+C:\Users\o4ndu\Desktop\Project\AdvancedSystemProject\WebTimeSheet\WebTimeSheet\bin\ApplicationInsights.config
+C:\Users\o4ndu\Desktop\Project\AdvancedSystemProject\WebTimeSheet\WebTimeSheet\bin\roslyn\csc.exe
+C:\Users\o4ndu\Desktop\Project\AdvancedSystemProject\WebTimeSheet\WebTimeSheet\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\o4ndu\Desktop\Project\AdvancedSystemProject\WebTimeSheet\WebTimeSheet\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\o4ndu\Desktop\Project\AdvancedSystemProject\WebTimeSheet\WebTimeSheet\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\o4ndu\Desktop\Project\AdvancedSystemProject\WebTimeSheet\WebTimeSheet\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\o4ndu\Desktop\Project\AdvancedSystemProject\WebTimeSheet\WebTimeSheet\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\o4ndu\Desktop\Project\AdvancedSystemProject\WebTimeSheet\WebTimeSheet\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\o4ndu\Desktop\Project\AdvancedSystemProject\WebTimeSheet\WebTimeSheet\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\o4ndu\Desktop\Project\AdvancedSystemProject\WebTimeSheet\WebTimeSheet\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\o4ndu\Desktop\Project\AdvancedSystemProject\WebTimeSheet\WebTimeSheet\bin\roslyn\vbc.exe
+C:\Users\o4ndu\Desktop\Project\AdvancedSystemProject\WebTimeSheet\WebTimeSheet\bin\roslyn\VBCSCompiler.exe
+C:\Users\o4ndu\Desktop\Project\AdvancedSystemProject\WebTimeSheet\WebTimeSheet\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\o4ndu\Desktop\Project\AdvancedSystemProject\WebTimeSheet\WebTimeSheet\bin\WebTimeSheet.dll.config
+C:\Users\o4ndu\Desktop\Project\AdvancedSystemProject\WebTimeSheet\WebTimeSheet\bin\WebTimeSheet.dll
+C:\Users\o4ndu\Desktop\Project\AdvancedSystemProject\WebTimeSheet\WebTimeSheet\bin\WebTimeSheet.pdb
+C:\Users\o4ndu\Desktop\Project\AdvancedSystemProject\WebTimeSheet\WebTimeSheet\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\o4ndu\Desktop\Project\AdvancedSystemProject\WebTimeSheet\WebTimeSheet\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\o4ndu\Desktop\Project\AdvancedSystemProject\WebTimeSheet\WebTimeSheet\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\o4ndu\Desktop\Project\AdvancedSystemProject\WebTimeSheet\WebTimeSheet\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\o4ndu\Desktop\Project\AdvancedSystemProject\WebTimeSheet\WebTimeSheet\bin\Microsoft.AI.Web.dll
+C:\Users\o4ndu\Desktop\Project\AdvancedSystemProject\WebTimeSheet\WebTimeSheet\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\o4ndu\Desktop\Project\AdvancedSystemProject\WebTimeSheet\WebTimeSheet\bin\Microsoft.ApplicationInsights.dll
+C:\Users\o4ndu\Desktop\Project\AdvancedSystemProject\WebTimeSheet\WebTimeSheet\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\o4ndu\Desktop\Project\AdvancedSystemProject\WebTimeSheet\WebTimeSheet\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\o4ndu\Desktop\Project\AdvancedSystemProject\WebTimeSheet\WebTimeSheet\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\o4ndu\Desktop\Project\AdvancedSystemProject\WebTimeSheet\WebTimeSheet\bin\Microsoft.AI.Web.xml
+C:\Users\o4ndu\Desktop\Project\AdvancedSystemProject\WebTimeSheet\WebTimeSheet\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\o4ndu\Desktop\Project\AdvancedSystemProject\WebTimeSheet\WebTimeSheet\bin\Microsoft.ApplicationInsights.xml
+C:\Users\o4ndu\Desktop\Project\AdvancedSystemProject\WebTimeSheet\WebTimeSheet\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml

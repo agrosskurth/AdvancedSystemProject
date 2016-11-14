@@ -15,6 +15,7 @@ namespace WebTimeSheet
         private String validateEmployeePw;
         //to confram correct username and password
         bool x = false;
+        public bool worked = false;
         bool _password = false;
         DBConnect d1 = new DBConnect();
 
@@ -73,6 +74,7 @@ namespace WebTimeSheet
                     if (dr.GetValue(1).Equals(getEmployeePw()))
                     {
                         Console.Out.WriteLine("Password is correct");
+                        worked = true;
                     }
                     //If the above statement fails, print incorrect password.
                     else
@@ -99,14 +101,3 @@ namespace WebTimeSheet
         }
     }
 }//End Class
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace WebTimeSheet
-{
-    public class Authentication
-    {
-    }
-}

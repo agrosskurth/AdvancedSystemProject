@@ -1,0 +1,6 @@
+﻿<siteMap>
+  <siteMapNode title="Home" description="Home" url="~/Home.aspx" >
+    <siteMapNode title="Login" description="Login" url="~/Login.aspx">
+    </siteMapNode>
+  </siteMapNode>
+</siteMap>

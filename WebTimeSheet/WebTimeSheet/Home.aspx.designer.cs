@@ -10,7 +10,7 @@
 namespace WebTimeSheet {
     
     
-    public partial class WebForm1 {
+    public partial class Home {
         
         /// <summary>
         /// form1 control.
@@ -22,48 +22,30 @@ namespace WebTimeSheet {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// txtID control.
+        /// TreeView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtID;
+        protected global::System.Web.UI.WebControls.TreeView TreeView1;
         
         /// <summary>
-        /// txtPassword control.
+        /// btnLogout0 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPassword;
+        protected global::System.Web.UI.WebControls.Button btnLogout0;
         
         /// <summary>
-        /// btnLogin control.
+        /// SiteMapDataSource1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnLogin;
-        
-        /// <summary>
-        /// btnExit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnExit;
-        
-        /// <summary>
-        /// LbAbout control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LbAbout;
+        protected global::System.Web.UI.WebControls.SiteMapDataSource SiteMapDataSource1;
     }
 }
