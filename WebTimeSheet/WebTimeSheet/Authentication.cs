@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tester
+namespace WebTimeSheet
 {
     class Authentication
     {
@@ -40,13 +40,13 @@ namespace Tester
         public String getValidateEmployeePw() { return validateEmployeePw; }
 
 
-            //SelectDB Method for checking password to username. Changed by Rusty to incorporate DBConnect
-            //on 10/19/2016
+        //SelectDB Method for checking password to username. Changed by Rusty to incorporate DBConnect
+        //on 10/19/2016
         public void SelectDB()
         {
             _employeeId = getEmployeeId();
             d1.DBSetup();
-                
+
             //Console.WriteLine("After set up");
 
             d1.cmd = "Select * from EmpLog where EmpId ='" + getEmployeeId() + "'";
@@ -85,7 +85,7 @@ namespace Tester
                 {
                     Console.WriteLine("Username is incorrect");
                 }
-            //General exception catch that will be expanded upon
+                //General exception catch that will be expanded upon
             }
             catch (Exception ex)
             {
@@ -99,3 +99,14 @@ namespace Tester
         }
     }
 }//End Class
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace WebTimeSheet
+{
+    public class Authentication
+    {
+    }
+}
