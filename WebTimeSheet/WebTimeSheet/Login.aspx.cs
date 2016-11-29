@@ -16,6 +16,7 @@ namespace WebTimeSheet
             
             if (a1.worked.Equals(true))
             {
+                Session["EmployeeID"] = txtID.Text;
                 Response.Redirect("Home.aspx");
             }
             else if (a1.worked.Equals(false))
