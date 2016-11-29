@@ -42,6 +42,7 @@
             this.lblEmployee = new System.Windows.Forms.Label();
             this.lblTimeIO = new System.Windows.Forms.Label();
             this.lblTimeSheet = new System.Windows.Forms.Label();
+            this.buttonSpan = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCorrect
@@ -180,11 +181,22 @@
             this.lblTimeSheet.TabIndex = 13;
             this.lblTimeSheet.Text = "Time Sheet";
             // 
+            // buttonSpan
+            // 
+            this.buttonSpan.Location = new System.Drawing.Point(324, 97);
+            this.buttonSpan.Name = "buttonSpan";
+            this.buttonSpan.Size = new System.Drawing.Size(98, 49);
+            this.buttonSpan.TabIndex = 14;
+            this.buttonSpan.Text = "TimeSpan";
+            this.buttonSpan.UseVisualStyleBackColor = true;
+            this.buttonSpan.Click += new System.EventHandler(this.buttonSpan_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(438, 273);
+            this.Controls.Add(this.buttonSpan);
             this.Controls.Add(this.lblTimeSheet);
             this.Controls.Add(this.lblTimeIO);
             this.Controls.Add(this.lblEmployee);
@@ -223,6 +235,7 @@
         private System.Windows.Forms.Label lblEmployee;
         private System.Windows.Forms.Label lblTimeIO;
         private System.Windows.Forms.Label lblTimeSheet;
+        private System.Windows.Forms.Button buttonSpan;
     }
 }
 

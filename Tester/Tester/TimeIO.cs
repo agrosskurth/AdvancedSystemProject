@@ -15,6 +15,9 @@ namespace Tester
         DateTime clockOut;
         private DBConnect d1 = new DBConnect();
         private int entId;
+        bool editable;
+        DateTime worked;
+        double total;
 
 
         //=========Constructors============//
@@ -25,15 +28,17 @@ namespace Tester
             clockOut = new DateTime(0, 0, 0, 0, 0, 0);
             reasonOut = "";
             entId = 00;
+            editable = false;
         }
 
-        public TimeIO(String i, DateTime ci, DateTime co, String r, int e)
+        public TimeIO(String i, DateTime ci, DateTime co, String r, int e, bool ed)
         {
             setId(i);
             setClockIn(ci);
             setClockOut(co);
             setReasonOut(r);
             setEntId(e);
+            setEditable(ed);
         }
 
         //==========Behaviors===========//
@@ -50,12 +55,18 @@ namespace Tester
         public void setClockOut(DateTime co) { clockOut = co; }
         public void setReasonOut(String r) { reasonOut = r; }
         public void setEntId(int e) { entId = e; }
+        public void setEditable(bool ed) { editable = ed; }
+        public void setWorked(DateTime w) { worked = w; }
+        public void setTotal(double t) { total = t; }
 
         public String getId() { return id; }
         public DateTime getClockIn() { return clockIn; }
         public DateTime getClockOut() { return clockOut; }
         public String getReasonOut() { return reasonOut; }
         public int getEntId() { return entId; }
+        public bool getEditable() { return editable; }
+        public DateTime getWorked() { return worked; }
+        public double getTotal() { return total; }
 
         //format date time 
 
@@ -85,10 +96,20 @@ namespace Tester
 
                 while (dr.Read())
                 {
-                    Console.WriteLine("ID: " + dr.GetValue(0).ToString());
-                    Console.WriteLine("DATE: " + dr.GetValue(1).ToString());
+                    setEntId(Convert.ToInt32(dr.GetValue(0)));
+                    setId(dr.GetValue(1).ToString());
+                    setClockIn(Convert.ToDateTime(dr.GetValue(2)));
+                    setClockOut(Convert.ToDateTime(dr.GetValue(3)));
+                    setEditable(Convert.ToBoolean(dr.GetValue(4)));
+                    setReasonOut(Convert.ToString(dr.GetValue(5)));
+                    setWorked(Convert.ToDateTime(dr.GetValue(6)));
+
+                    Console.WriteLine("EntryID: " + dr.GetValue(0).ToString());
+                    Console.WriteLine("EmpID: " + dr.GetValue(1).ToString());
                     Console.WriteLine("IN: " + dr.GetValue(2).ToString());
                     Console.WriteLine("OUT: " + dr.GetValue(3).ToString());
+                    Console.WriteLine("Editable: " + dr.GetValue(4));
+                    Console.WriteLine("Span: " + dr.GetValue(5));
                 }
 
             }
@@ -110,11 +131,12 @@ namespace Tester
             try
             {
                 //SQL Insert Statement
-                d1.stmt = new SqlCommand("INSERT INTO EmpTime (EmpID, TimeIn, TimeOut, ReasonOut) VALUES (@EmpID, @TimeIn, @TimeOut, @ReasonOut)");
+                d1.stmt = new SqlCommand("INSERT INTO EmpTime (EmpID, TimeIn, TimeOut, ReasonOut, Editable) VALUES (@EmpID, @TimeIn, @TimeOut, @ReasonOut, @editable)");
                 d1.stmt.Parameters.AddWithValue("@EmpID", getId());
                 d1.stmt.Parameters.AddWithValue("@TimeIn", getClockIn());
                 d1.stmt.Parameters.AddWithValue("@TimeOut", getClockOut());
                 d1.stmt.Parameters.AddWithValue("@ReasonOut", getReasonOut());
+                d1.stmt.Parameters.AddWithValue(@"Editable", getEditable());
                 d1.SqlDbConection2.Open();
                 d1.stmt.Connection = d1.SqlDbConection2;
                 
@@ -142,7 +164,8 @@ namespace Tester
             //SQL Update Statement
             d1.cmd = "Update EmpTime set TimeIn ='" + getClockIn() + "'," +
                 "TimeOut ='" + getClockOut() + "'," +
-                "ReasonOut ='" + getReasonOut() + "'" +
+                "ReasonOut ='" + getReasonOut() + "'," +
+                "Editable = " + getEditable() +
                 " Where EntryID ='" + getEntId() + "'";
             d1.SqlDataAdapter.UpdateCommand.CommandText = d1.cmd;
             d1.SqlDataAdapter.UpdateCommand.Connection = d1.SqlDbConection2;
@@ -212,6 +235,43 @@ namespace Tester
                 d1.SqlDbConection2.Close();
             }
         }
+
+        //Method for Selecting hours worked between two given dates.
+        public void selectHours(string _id, DateTime ti, DateTime to)
+        {
+            setTotal(0);
+            d1.DBSetup();
+            d1.cmd = "SELECT * FROM EmpTime WHERE EmpID = " + "'" + _id + "' And TimeIn >= " + ti + " and TimeOut <= " + to;
+            d1.SqlDataAdapter.SelectCommand.Connection = d1.SqlDbConection2;
+            d1.SqlDataAdapter.SelectCommand.CommandText = d1.cmd;
+
+            try
+            {
+                Console.WriteLine("SQL:" + d1.cmd);
+                d1.SqlDbConection2.Open();
+                Console.WriteLine("Connection opened...");
+                System.Data.SqlClient.SqlDataReader dr;
+                dr = d1.SqlDataAdapter.SelectCommand.ExecuteReader();
+                Console.WriteLine("Statement execute...reader returned...");
+
+                while (dr.Read())
+                {
+                    setWorked(Convert.ToDateTime(dr.GetValue(6)));
+                    setTotal(getTotal() + getWorked().Hour + (getWorked().Minute / 60));
+                    Console.WriteLine("total = " + getTotal());
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("ERROR: " + ex);
+            }
+            finally
+            {
+                d1.SqlDbConection2.Close();
+            }
+        }
+
         //I just realized that updating the time might be tricky. How we will determine what needs to be updated? 
     }
 }
