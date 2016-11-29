@@ -16,8 +16,19 @@ namespace WebTimeSheet
             
             if (a1.worked.Equals(true))
             {
-                Home h1 = new Home();
+                Response.Redirect("Home.aspx");
             }
+            else if (a1.worked.Equals(false))
+            {
+                txtID.Text = "";
+                txtPassword.Text = "";
+                labelIncorrect.Visible = true;
+            }
+        }
+
+        protected void btnAbout_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("About.aspx");
         }
     }
 }

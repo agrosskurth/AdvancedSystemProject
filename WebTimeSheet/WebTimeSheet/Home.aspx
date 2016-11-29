@@ -16,16 +16,10 @@
     <form id="form1" runat="server">
     <div class="auto-style1" style="text-align: center">
     
-        <br />
-        Welcome user</div>
-        <p>
-            <asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1">
-            </asp:TreeView>
-        </p>
-        <p>
-            &nbsp;</p>
-        <p>
-            &nbsp;</p>
+        <h1>Welcome User</h1>
+        <asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1">
+        </asp:TreeView>
+        </div>
         <p>
             &nbsp;</p>
         <p>
