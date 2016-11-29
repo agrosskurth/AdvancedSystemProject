@@ -17,7 +17,7 @@ namespace Tester
         private int entId;
         bool editable;
         DateTime worked;
-        DateTime Total;
+        double total;
 
 
         //=========Constructors============//
@@ -57,7 +57,7 @@ namespace Tester
         public void setEntId(int e) { entId = e; }
         public void setEditable(bool ed) { editable = ed; }
         public void setWorked(DateTime w) { worked = w; }
-        public void setTotal(DateTime t) { Total = t; }
+        public void setTotal(double t) { total = t; }
 
         public String getId() { return id; }
         public DateTime getClockIn() { return clockIn; }
@@ -66,7 +66,7 @@ namespace Tester
         public int getEntId() { return entId; }
         public bool getEditable() { return editable; }
         public DateTime getWorked() { return worked; }
-        public DateTime getTotal() { return Total; }
+        public double getTotal() { return total; }
 
         //format date time 
 
@@ -237,10 +237,11 @@ namespace Tester
         }
 
         //Method for Selecting hours worked between two given dates.
-        public void selectHours(string _id)
+        public void selectHours(string _id, DateTime ti, DateTime to)
         {
+            setTotal(0);
             d1.DBSetup();
-            d1.cmd = "SELECT * FROM EmpTime WHERE EmpID = " + "'" + _id + "'";
+            d1.cmd = "SELECT * FROM EmpTime WHERE EmpID = " + "'" + _id + "' And TimeIn >= " + ti + " and TimeOut <= " + to;
             d1.SqlDataAdapter.SelectCommand.Connection = d1.SqlDbConection2;
             d1.SqlDataAdapter.SelectCommand.CommandText = d1.cmd;
 
@@ -255,7 +256,9 @@ namespace Tester
 
                 while (dr.Read())
                 {
-                    set
+                    setWorked(Convert.ToDateTime(dr.GetValue(6)));
+                    setTotal(getTotal() + getWorked().Hour + (getWorked().Minute / 60));
+                    Console.WriteLine("total = " + getTotal());
                 }
 
             }

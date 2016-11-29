@@ -108,5 +108,12 @@ namespace Tester
             t1 = new TimeIO("900254666", new DateTime(2011, 2, 1, 2, 56, 00), new DateTime(2011, 2, 3, 3, 56, 00), "Lunch", 9, false);
             t1.updateTime();
         }
+
+        private void buttonSpan_Click(object sender, EventArgs e)
+        {
+            TimeIO t1;
+            t1 = new TimeIO();
+            t1.selectHours()
+        }
     }//End Class
 }
