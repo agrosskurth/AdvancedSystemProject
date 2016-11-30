@@ -111,11 +111,12 @@ namespace WebTimeSheet
             try
             {
                 //SQL Insert Statement
-                d1.stmt = new SqlCommand("INSERT INTO EmpTime (EmpID, TimeIn, TimeOut, ReasonOut) VALUES (@EmpID, @TimeIn, @TimeOut, @ReasonOut)");
+                d1.stmt = new SqlCommand("INSERT INTO EmpTime (EmpID, TimeIn, TimeOut, ReasonOut, Editable) VALUES (@EmpID, @TimeIn, @TimeOut, @ReasonOut, @Editable)");
                 d1.stmt.Parameters.AddWithValue("@EmpID", getId());
                 d1.stmt.Parameters.AddWithValue("@TimeIn", getClockIn());
                 d1.stmt.Parameters.AddWithValue("@TimeOut", getClockOut());
                 d1.stmt.Parameters.AddWithValue("@ReasonOut", getReasonOut());
+                d1.stmt.Parameters.AddWithValue("@Editable", false);
                 d1.SqlDbConection2.Open();
                 d1.stmt.Connection = d1.SqlDbConection2;
 

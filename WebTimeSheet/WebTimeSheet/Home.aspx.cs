@@ -15,8 +15,7 @@ namespace WebTimeSheet
         }
         protected void btnLogout_Click(object sender, EventArgs e)
         {
-            Login l1 = new Login();
-
+            Response.Redirect("~/Login.aspx");
         }
 
         protected void TreeView1_SelectedNodeChanged(object sender, EventArgs e)
