@@ -16,16 +16,16 @@ namespace Tester
         private DBConnect d1 = new DBConnect();
         private int entId;
         bool editable;
-        DateTime worked;
-        double total;
+        DateTime worked = new DateTime(1990, 1, 1, 0, 0, 0);
+        double total = 0;
 
 
         //=========Constructors============//
         public TimeIO()
         {
             id = "";
-            clockIn = new DateTime(0, 0, 0, 0, 0, 0);
-            clockOut = new DateTime(0, 0, 0, 0, 0, 0);
+            clockIn = new DateTime(1990, 1, 1, 0, 0, 0);
+            clockOut = new DateTime(1990, 1, 1, 0, 0, 0);
             reasonOut = "";
             entId = 00;
             editable = false;
@@ -100,16 +100,17 @@ namespace Tester
                     setId(dr.GetValue(1).ToString());
                     setClockIn(Convert.ToDateTime(dr.GetValue(2)));
                     setClockOut(Convert.ToDateTime(dr.GetValue(3)));
-                    setEditable(Convert.ToBoolean(dr.GetValue(4)));
-                    setReasonOut(Convert.ToString(dr.GetValue(5)));
+                    setEditable(Convert.ToBoolean(dr.GetValue(5)));
+                    setReasonOut(Convert.ToString(dr.GetValue(4)));
                     setWorked(Convert.ToDateTime(dr.GetValue(6)));
 
                     Console.WriteLine("EntryID: " + dr.GetValue(0).ToString());
                     Console.WriteLine("EmpID: " + dr.GetValue(1).ToString());
                     Console.WriteLine("IN: " + dr.GetValue(2).ToString());
                     Console.WriteLine("OUT: " + dr.GetValue(3).ToString());
-                    Console.WriteLine("Editable: " + dr.GetValue(4));
-                    Console.WriteLine("Span: " + dr.GetValue(5));
+                    Console.WriteLine("Reason: " + getReasonOut());
+                    Console.WriteLine("Editable: " + dr.GetValue(5));
+                    Console.WriteLine("Span: " + dr.GetValue(6));
                 }
 
             }
@@ -236,17 +237,24 @@ namespace Tester
             }
         }
 
-        //Method for Selecting hours worked between two given dates.
+        //Method for Selecting hours worked between two given DateTimes.
+        //Selects TimeWorked from EmpTime table between 2 DateTimes, sets double Total to figure out hours worked in that time frame.
         public void selectHours(string _id, DateTime ti, DateTime to)
         {
+            //sets total hours for week to 0
             setTotal(0);
+            //instantiate hours and minutes doubles for determining total time worked
+            double hours = 0;
+            double minutes = 0;
+            //Connect to DB
             d1.DBSetup();
-            d1.cmd = "SELECT * FROM EmpTime WHERE EmpID = " + "'" + _id + "' And TimeIn >= " + ti + " and TimeOut <= " + to;
+            d1.cmd = "SELECT TimeWorked FROM EmpTime WHERE EmpID = " + "'" + _id + "' And TimeIn >= '" + ti + "' and TimeOut <= '" + to + "'";
             d1.SqlDataAdapter.SelectCommand.Connection = d1.SqlDbConection2;
             d1.SqlDataAdapter.SelectCommand.CommandText = d1.cmd;
 
             try
             {
+                //run sql statement
                 Console.WriteLine("SQL:" + d1.cmd);
                 d1.SqlDbConection2.Open();
                 Console.WriteLine("Connection opened...");
@@ -254,11 +262,16 @@ namespace Tester
                 dr = d1.SqlDataAdapter.SelectCommand.ExecuteReader();
                 Console.WriteLine("Statement execute...reader returned...");
 
+                //while the data reader continues to grab elements from DB, it resets the TimeWorked field,
+                //and sums up the total hours worked for the week.
                 while (dr.Read())
                 {
-                    setWorked(Convert.ToDateTime(dr.GetValue(6)));
-                    setTotal(getTotal() + getWorked().Hour + (getWorked().Minute / 60));
-                    Console.WriteLine("total = " + getTotal());
+                    setWorked(Convert.ToDateTime(dr.GetValue(0)));
+                    hours = Convert.ToDouble(getWorked().Hour);
+                    minutes = Convert.ToDouble(getWorked().Minute);
+                    minutes = minutes / 60;
+                    setTotal(getTotal() + hours + minutes);
+
                 }
 
             }

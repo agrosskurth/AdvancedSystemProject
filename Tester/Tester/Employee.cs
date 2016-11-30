@@ -14,6 +14,7 @@ namespace Tester
         private bool SR, HR, NE, FuTime;
         private String id, fName, lName, street, city, state, zip, email, SRID;
         DBConnect d1 = new DBConnect();
+        
 
         //==========Constructors===========//
         public Employee()
