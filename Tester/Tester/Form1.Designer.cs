@@ -43,6 +43,8 @@
             this.lblTimeIO = new System.Windows.Forms.Label();
             this.lblTimeSheet = new System.Windows.Forms.Label();
             this.buttonSpan = new System.Windows.Forms.Button();
+            this.buttonSR = new System.Windows.Forms.Button();
+            this.buttonOT = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCorrect
@@ -191,11 +193,33 @@
             this.buttonSpan.UseVisualStyleBackColor = true;
             this.buttonSpan.Click += new System.EventHandler(this.buttonSpan_Click);
             // 
+            // buttonSR
+            // 
+            this.buttonSR.Location = new System.Drawing.Point(116, 207);
+            this.buttonSR.Name = "buttonSR";
+            this.buttonSR.Size = new System.Drawing.Size(98, 49);
+            this.buttonSR.TabIndex = 15;
+            this.buttonSR.Text = "Supervisor List";
+            this.buttonSR.UseVisualStyleBackColor = true;
+            this.buttonSR.Click += new System.EventHandler(this.buttonSR_Click);
+            // 
+            // buttonOT
+            // 
+            this.buttonOT.Location = new System.Drawing.Point(324, 152);
+            this.buttonOT.Name = "buttonOT";
+            this.buttonOT.Size = new System.Drawing.Size(98, 49);
+            this.buttonOT.TabIndex = 16;
+            this.buttonOT.Text = "Supervisor OT List";
+            this.buttonOT.UseVisualStyleBackColor = true;
+            this.buttonOT.Click += new System.EventHandler(this.buttonOT_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(438, 273);
+            this.Controls.Add(this.buttonOT);
+            this.Controls.Add(this.buttonSR);
             this.Controls.Add(this.buttonSpan);
             this.Controls.Add(this.lblTimeSheet);
             this.Controls.Add(this.lblTimeIO);
@@ -236,6 +260,8 @@
         private System.Windows.Forms.Label lblTimeIO;
         private System.Windows.Forms.Label lblTimeSheet;
         private System.Windows.Forms.Button buttonSpan;
+        private System.Windows.Forms.Button buttonSR;
+        private System.Windows.Forms.Button buttonOT;
     }
 }
 

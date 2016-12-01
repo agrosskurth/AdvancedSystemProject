@@ -69,7 +69,7 @@ namespace Tester
         private void BtnTimeSheet_Click(object sender, EventArgs e)
         {
             TimeSheet ts1 = new TimeSheet();
-            ts1.timeSheetSelect("900254666");
+            ts1.timeSheetSelect("900255666");
             ts1.display();
 
         }
@@ -113,7 +113,21 @@ namespace Tester
         {
             TimeIO t1;
             t1 = new TimeIO();
-            t1.selectHours()
+            t1.selectHours("900255666", new DateTime(2014, 5, 5, 0, 0, 0), new DateTime(2014, 5, 9, 23, 59, 59));
+        }
+
+        private void buttonSR_Click(object sender, EventArgs e)
+        {
+            Supervisor s1 = new Supervisor();
+            s1.selectEmps("900254456");
+            s1.display();
+        }
+
+        private void buttonOT_Click(object sender, EventArgs e)
+        {
+            Supervisor s1 = new Supervisor();
+            s1.selectEmps("900254456");
+            s1.selectOvertime(new DateTime(2014, 5, 5, 0, 0, 0), new DateTime(2014, 5, 9, 23, 59, 59));
         }
     }//End Class
 }
