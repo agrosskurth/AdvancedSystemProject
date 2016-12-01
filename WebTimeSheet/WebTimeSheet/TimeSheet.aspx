@@ -10,11 +10,21 @@
     <form id="form1" runat="server">
     <div>
     <h1 style="text-align: center">Time Sheet Entry</h1>
-        <p style="text-align: center"></p>
         <p style="text-align: center">
-            <asp:Label ID="lblDate" runat="server"></asp:Label>
-&nbsp;
-            <asp:DropDownList ID="ddlHoursIn" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+            <asp:Label ID="lblSuccess" runat="server" ForeColor="#339933" Text="*Your time sheet has been submitted successfully" Visible="False"></asp:Label>
+            <asp:Label ID="lblError" runat="server" ForeColor="Red" Text="*Please make sure you have a selection in all boxes before you press submit" Visible="False"></asp:Label>
+        </p>
+        <p style="text-align: center">
+            <asp:Label ID="lblMonth" runat="server"></asp:Label>
+            /
+            <asp:Label ID="lblDay" runat="server"></asp:Label>
+            /
+            <asp:Label ID="lblYear" runat="server"></asp:Label>
+        </p>
+        <p style="text-align: center">
+&nbsp;<asp:Label ID="lblClockIn" runat="server" Text="Clock In Time"></asp:Label>
+&nbsp;&nbsp;
+            <asp:DropDownList ID="ddlHoursIn" runat="server">
                 <asp:ListItem>Hours</asp:ListItem>
                 <asp:ListItem Text="12 AM" Value="0"></asp:ListItem>
                 <asp:ListItem>1 AM</asp:ListItem>
@@ -107,8 +117,9 @@
             <asp:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_Click" Text="Submit" />
         </p>
         <p style="text-align: center">
-            <asp:Label ID="lblDate0" runat="server"></asp:Label>
-            <asp:DropDownList ID="ddlHoursOut" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+            <asp:Label ID="lblClockOut" runat="server" Text="Clock Out Time"></asp:Label>
+&nbsp;
+            <asp:DropDownList ID="ddlHoursOut" runat="server">
                 <asp:ListItem>Hours</asp:ListItem>
                 <asp:ListItem Text="12 AM" Value="0"></asp:ListItem>
                 <asp:ListItem>1 AM</asp:ListItem>

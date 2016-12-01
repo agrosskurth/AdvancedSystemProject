@@ -11,16 +11,15 @@ namespace WebTimeSheet
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            //On page load, we use the session first name and last name(acquired from the login page)
+            //to fill out the welcome message with their registered name in the Database
+            lblFName.Text = Session["EmployeeFName"].ToString();
+            lblLName.Text = Session["EmployeeLName"].ToString();
         }
         protected void btnLogout_Click(object sender, EventArgs e)
         {
+            //Clicking the logout button redirects the user to the login.aspx page
             Response.Redirect("~/Login.aspx");
-        }
-
-        protected void TreeView1_SelectedNodeChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

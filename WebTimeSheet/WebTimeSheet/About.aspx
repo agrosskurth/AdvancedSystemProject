@@ -6,13 +6,32 @@
 <head runat="server">
     <title></title>
 </head>
-<body>
+<body style="height: 34px">
     <form id="form1" runat="server">
     <div>
     <h1>Version 1.0</h1>
     </div>
+        <p>
+            &nbsp;</p>
+        <p>
+            &nbsp;</p>
+        <p>
+            &nbsp;</p>
+        <p>
+            &nbsp;</p>
+        <p>
+            &nbsp;</p>
+        <p>
+            &nbsp;</p>
+        <p>
+            &nbsp;</p>
+        <p>
+            &nbsp;</p>
+        <p>
+            &nbsp;</p>
+        <p style="text-align: right">
+            <asp:Button ID="btnHome" runat="server" OnClick="btnHome_Click" Text="Home" />
+        </p>
     </form>
-    <p style="overflow: auto">
-        &nbsp;</p>
-</body>
+    </body>
 </html>
