@@ -114,6 +114,7 @@ namespace Tester
             TimeIO t1;
             t1 = new TimeIO();
             t1.selectHours("900255666", new DateTime(2014, 5, 5, 0, 0, 0), new DateTime(2014, 5, 9, 23, 59, 59));
+            Console.WriteLine(t1.getTotal());
         }
 
         private void buttonSR_Click(object sender, EventArgs e)
@@ -126,8 +127,17 @@ namespace Tester
         private void buttonOT_Click(object sender, EventArgs e)
         {
             Supervisor s1 = new Supervisor();
+            s1.selectEmps("900254456");
+            s1.selectOvertime(new DateTime(2014, 5, 5, 0, 0, 0), new DateTime(2014, 5, 9, 23, 59, 59));
             s1.display();
-            s1.selectOvertime("900254456", new DateTime(2014, 5, 5, 0, 0, 0), new DateTime(2014, 5, 9, 23, 59, 59));
+        }
+
+        private void buttonHROT_Click(object sender, EventArgs e)
+        {
+            HR h1 = new HR();
+            h1.selectEmps();
+            h1.selectOvertime(new DateTime(2014, 5, 5, 0, 0, 0), new DateTime(2014, 5, 9, 23, 59, 59));
+            h1.display();
         }
     }//End Class
 }
