@@ -126,8 +126,8 @@ namespace Tester
         private void buttonOT_Click(object sender, EventArgs e)
         {
             Supervisor s1 = new Supervisor();
-            s1.selectEmps("900254456");
-            s1.selectOvertime(new DateTime(2014, 5, 5, 0, 0, 0), new DateTime(2014, 5, 9, 23, 59, 59));
+            s1.display();
+            s1.selectOvertime("900254456", new DateTime(2014, 5, 5, 0, 0, 0), new DateTime(2014, 5, 9, 23, 59, 59));
         }
     }//End Class
 }

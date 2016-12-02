@@ -17,6 +17,7 @@ namespace Tester
         {
             srId = "";
             emps = new List<Employee>();
+            empIds = new List<string>();
         }
 
         public Supervisor(string sid)
@@ -64,23 +65,24 @@ namespace Tester
 
         //Method for Selecting hours worked between two given DateTimes.
         //Selects TimeWorked from EmpTime table between 2 DateTimes, sets double Total to figure out hours worked in that time frame.
-        public void selectOvertime(DateTime i, DateTime o)
+        public void selectOvertime(string d, DateTime i, DateTime o)
         {
+            selectEmps(d);
             TimeIO tio = new TimeIO();
             for (int x = 0; x < emps.Count(); x++)
             {
-                Console.WriteLine(emps[x].getId() + "");
+                //Console.WriteLine(emps[x].getId() + "");
                 tio.selectHours(emps[x].getId(), i, o);
-                if (tio.getTotal() < 40)
+                if (tio.getTotal() > 40 && tio.getTotal() != 0)
                 {
                     getEmpIds().Add(emps[x].getId());
                 }
             }
             for (int x = 0; x < empIds.Count(); x++)
             {
-                Console.WriteLine("EmpId = " + empIds[x]);
                 tio.selectHours(empIds[x], i, o);
-                Console.WriteLine(tio.getTotal());
+                Console.WriteLine("EmpId = " + empIds[x]);
+                Console.WriteLine("Overtime Hours Worked: " + (Convert.ToInt32(tio.getTotal()) - 40) + "Hours and " + );
             }
         }
         
