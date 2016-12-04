@@ -11,11 +11,9 @@ namespace Tester
         //+++properties++
         private String _employeeId;
         private String _employeePw;
-        private String validateEmployeeId;
         private String validateEmployeePw;
         //to confram correct username and password
         bool x = false;
-        bool _password = false;
         DBConnect d1 = new DBConnect();
 
         public Authentication()
