@@ -12,12 +12,14 @@ namespace Tester
         private List<Employee> emps;
         DBConnect d1 = new DBConnect();
         private List<string> empIds;
+        private List<double> hours;
 
         public Supervisor()
         {
             srId = "";
             emps = new List<Employee>();
             empIds = new List<string>();
+            hours = new List<double>();
         }
 
         public Supervisor(string sid)
@@ -30,6 +32,7 @@ namespace Tester
         public string getSrId() { return srId; }
         public List<Employee> getEmps() { return emps; }
         public List<string> getEmpIds() { return empIds; }
+        public List<double> getHours() { return hours; }
 
         public void selectEmps(string sid)
         {
@@ -70,31 +73,31 @@ namespace Tester
             TimeIO tio = new TimeIO();
             for (int x = 0; x < emps.Count(); x++)
             {
-                //Console.WriteLine(emps[x].getId() + "");
                 tio.selectHours(emps[x].getId(), i, o);
                 if (tio.getTotal() > 40 && tio.getTotal() != 0)
                 {
                     getEmpIds().Add(emps[x].getId());
+                    getHours().Add(tio.getTotal());
                 }
-            }
-            for (int x = 0; x < empIds.Count(); x++)
-            {
-                tio.selectHours(empIds[x], i, o);
-                Employee e1 = new Employee();
-                e1.selectEmp(empIds[x]);
-
-                Console.WriteLine("Week between " + i + " and " + o + " for Employee " + e1.getFName() + " " + e1.getLName());
-                Console.WriteLine("Overtime Hours Worked: " + ((int)(tio.getTotal()) - 40) + " Hours and " + ((tio.getTotal() - (int)(tio.getTotal())) * 60) + " minutes.");
-                Console.WriteLine(tio.getTotal() - (int)tio.getTotal() + "");
             }
         }
         
 
         public void display()
         {
+            Employee e1 = new Employee();
+            //list all employees
             for (int x = 0; x < emps.Count(); x++)
             {
                 Console.WriteLine("EMPLOYEE -- " + emps[x].getId());
+            }
+
+            //all overtime Employees with ot hours
+            for (int x = 0; x < empIds.Count(); x++)
+            {
+                e1.selectEmp(empIds[x]);
+                Console.WriteLine("Overtime Employee: " + e1.getFName() + " " + e1.getLName());
+                Console.WriteLine("Overtime Hours Worked: " + (((int)(hours[x]) - 40) + " Hours and " + (hours[x] - (int)hours[x]) * 60) + " minutes.");
             }
         }
     }

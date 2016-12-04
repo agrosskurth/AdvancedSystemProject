@@ -78,24 +78,33 @@ namespace Tester
         //but for now it will work.
         //-Kyle
 
+        //Select Method for retrieving data from EmpTime table based on EmpID
         public void selectTime(string _id)
         {
+            //establish connection to DB
             d1.DBSetup();
+
+            //SQL code for selecting all from EmpTime table based on EmpId provided
             d1.cmd = "SELECT * FROM EmpTime WHERE EmpID = " + "'" + _id + "'";
             d1.SqlDataAdapter.SelectCommand.Connection = d1.SqlDbConection2;
             d1.SqlDataAdapter.SelectCommand.CommandText = d1.cmd;
 
             try
             {
+                //console write sql code
                 Console.WriteLine("SQL:" + d1.cmd);
                 d1.SqlDbConection2.Open();
+
+                //confirm connection worked
                 Console.WriteLine("Connection opened...");
                 System.Data.SqlClient.SqlDataReader dr;
                 dr = d1.SqlDataAdapter.SelectCommand.ExecuteReader();
                 Console.WriteLine("Statement execute...reader returned...");
 
+                //while data reader is pulling out data, fill in values
                 while (dr.Read())
                 {
+                    //Setter values for timeIO
                     setEntId(Convert.ToInt32(dr.GetValue(0)));
                     setId(dr.GetValue(1).ToString());
                     setClockIn(Convert.ToDateTime(dr.GetValue(2)));
@@ -104,6 +113,7 @@ namespace Tester
                     setReasonOut(Convert.ToString(dr.GetValue(4)));
                     setWorked(Convert.ToDateTime(dr.GetValue(6)));
 
+                    //Console WriteLine to confirm values are correct
                     Console.WriteLine("EntryID: " + dr.GetValue(0).ToString());
                     Console.WriteLine("EmpID: " + dr.GetValue(1).ToString());
                     Console.WriteLine("IN: " + dr.GetValue(2).ToString());
@@ -238,7 +248,8 @@ namespace Tester
         }
 
         //Method for Selecting hours worked between two given DateTimes.
-        //Selects TimeWorked from EmpTime table between 2 DateTimes, sets double Total to figure out hours worked in that time frame.
+        //Selects TimeWorked from EmpTime table between 2 provided DateTimes(ti for timeIn, to for time Out), 
+        //sets double Total to figure out hours worked in that time frame.
         public void selectHours(string _id, DateTime ti, DateTime to)
         {
             //sets total hours for week to 0
