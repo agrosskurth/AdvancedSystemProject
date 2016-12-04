@@ -15,7 +15,7 @@ namespace Tester
         DateTime clockOut;
         private DBConnect d1 = new DBConnect();
         private int entId;
-        bool editable;
+        bool editable, absence;
         DateTime worked = new DateTime(1990, 1, 1, 0, 0, 0);
         double total = 0;
 
@@ -29,9 +29,10 @@ namespace Tester
             reasonOut = "";
             entId = 00;
             editable = false;
+            absence = false;
         }
 
-        public TimeIO(String i, DateTime ci, DateTime co, String r, int e, bool ed)
+        public TimeIO(String i, DateTime ci, DateTime co, String r, int e, bool ed, bool a)
         {
             setId(i);
             setClockIn(ci);
@@ -39,6 +40,7 @@ namespace Tester
             setReasonOut(r);
             setEntId(e);
             setEditable(ed);
+            setAbsence(a);
         }
 
         //==========Behaviors===========//
@@ -58,6 +60,7 @@ namespace Tester
         public void setEditable(bool ed) { editable = ed; }
         public void setWorked(DateTime w) { worked = w; }
         public void setTotal(double t) { total = t; }
+        public void setAbsence(bool a) { absence = a; }
 
         public String getId() { return id; }
         public DateTime getClockIn() { return clockIn; }
@@ -67,6 +70,7 @@ namespace Tester
         public bool getEditable() { return editable; }
         public DateTime getWorked() { return worked; }
         public double getTotal() { return total; }
+        public bool getAbsence() { return absence; }
 
         //format date time 
 
@@ -85,7 +89,7 @@ namespace Tester
             d1.DBSetup();
 
             //SQL code for selecting all from EmpTime table based on EmpId provided
-            d1.cmd = "SELECT * FROM EmpTime WHERE EmpID = " + "'" + _id + "'";
+            d1.cmd = "SELECT * FROM EmpTime WHERE EmpID = " + "'" + _id + "'" + "and Absence = 'false'";
             d1.SqlDataAdapter.SelectCommand.Connection = d1.SqlDbConection2;
             d1.SqlDataAdapter.SelectCommand.CommandText = d1.cmd;
 
@@ -112,6 +116,7 @@ namespace Tester
                     setEditable(Convert.ToBoolean(dr.GetValue(5)));
                     setReasonOut(Convert.ToString(dr.GetValue(4)));
                     setWorked(Convert.ToDateTime(dr.GetValue(6)));
+                    setAbsence(Convert.ToBoolean(dr.GetValue(7)));
 
                     //Console WriteLine to confirm values are correct
                     Console.WriteLine("EntryID: " + dr.GetValue(0).ToString());
@@ -121,6 +126,7 @@ namespace Tester
                     Console.WriteLine("Reason: " + getReasonOut());
                     Console.WriteLine("Editable: " + dr.GetValue(5));
                     Console.WriteLine("Span: " + dr.GetValue(6));
+                    Console.WriteLine("Absence: " + dr.GetValue(7));
                 }
 
             }
@@ -142,12 +148,13 @@ namespace Tester
             try
             {
                 //SQL Insert Statement
-                d1.stmt = new SqlCommand("INSERT INTO EmpTime (EmpID, TimeIn, TimeOut, ReasonOut, Editable) VALUES (@EmpID, @TimeIn, @TimeOut, @ReasonOut, @editable)");
+                d1.stmt = new SqlCommand("INSERT INTO EmpTime (EmpID, TimeIn, TimeOut, ReasonOut, Editable, Absence) VALUES (@EmpID, @TimeIn, @TimeOut, @ReasonOut, @Editable, @Absence)");
                 d1.stmt.Parameters.AddWithValue("@EmpID", getId());
                 d1.stmt.Parameters.AddWithValue("@TimeIn", getClockIn());
                 d1.stmt.Parameters.AddWithValue("@TimeOut", getClockOut());
                 d1.stmt.Parameters.AddWithValue("@ReasonOut", getReasonOut());
                 d1.stmt.Parameters.AddWithValue(@"Editable", getEditable());
+                d1.stmt.Parameters.AddWithValue(@"Absence", getAbsence());
                 d1.SqlDbConection2.Open();
                 d1.stmt.Connection = d1.SqlDbConection2;
                 
@@ -177,6 +184,7 @@ namespace Tester
                 "TimeOut ='" + getClockOut() + "'," +
                 "ReasonOut ='" + getReasonOut() + "'," +
                 "Editable = " + getEditable() +
+                "Absence = " + getAbsence() +
                 " Where EntryID ='" + getEntId() + "'";
             d1.SqlDataAdapter.UpdateCommand.CommandText = d1.cmd;
             d1.SqlDataAdapter.UpdateCommand.Connection = d1.SqlDbConection2;
@@ -259,7 +267,7 @@ namespace Tester
             double minutes = 0;
             //Connect to DB
             d1.DBSetup();
-            d1.cmd = "SELECT TimeWorked FROM EmpTime WHERE EmpID = " + "'" + _id + "' And TimeIn >= '" + ti + "' and TimeOut <= '" + to + "'";
+            d1.cmd = "SELECT TimeWorked FROM EmpTime WHERE EmpID = " + "'" + _id + "' And TimeIn >= '" + ti + "' and TimeOut <= '" + to + "' AND absence = 'false'" ;
             d1.SqlDataAdapter.SelectCommand.Connection = d1.SqlDbConection2;
             d1.SqlDataAdapter.SelectCommand.CommandText = d1.cmd;
 
