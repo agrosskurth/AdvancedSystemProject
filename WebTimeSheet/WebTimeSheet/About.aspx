@@ -9,10 +9,17 @@
 <body style="height: 34px">
     <form id="form1" runat="server">
     <div>
-    <h1>Version 1.0</h1>
+    <h1>Version 0.5</h1>
     </div>
         <p>
-            &nbsp;</p>
+            Created: Fall 2016</p>
+        <p>
+            Created by: BARKWing Duck - Andrew Boyle, Kyle Flippo, Andrew Grosskurth, Rusty Hodge, Osita Nduka</p>
+        <p>
+            HelpDoc</p>
+        <p>
+            <asp:HyperLink ID="helpDocLink" runat="server">Help Doc</asp:HyperLink>
+        </p>
         <p>
             &nbsp;</p>
         <p>
