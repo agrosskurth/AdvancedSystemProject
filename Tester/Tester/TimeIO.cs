@@ -267,7 +267,57 @@ namespace Tester
             double minutes = 0;
             //Connect to DB
             d1.DBSetup();
-            d1.cmd = "SELECT TimeWorked FROM EmpTime WHERE EmpID = " + "'" + _id + "' And TimeIn >= '" + ti + "' and TimeOut <= '" + to + "' AND absence = 'false'" ;
+            d1.cmd = "SELECT TimeWorked FROM EmpTime WHERE EmpID = " + "'" + _id + "' And TimeIn >= '" + ti + "' and TimeOut <= '" + to + "' AND absence = 'false'";
+            d1.SqlDataAdapter.SelectCommand.Connection = d1.SqlDbConection2;
+            d1.SqlDataAdapter.SelectCommand.CommandText = d1.cmd;
+
+            try
+            {
+                //run sql statement
+                Console.WriteLine("SQL:" + d1.cmd);
+                d1.SqlDbConection2.Open();
+                Console.WriteLine("Connection opened...");
+                System.Data.SqlClient.SqlDataReader dr;
+                dr = d1.SqlDataAdapter.SelectCommand.ExecuteReader();
+                Console.WriteLine("Statement execute...reader returned...");
+
+                //while the data reader continues to grab elements from DB, it resets the TimeWorked field,
+                //and sums up the total hours worked for the week.
+                while (dr.Read())
+                {
+                    setWorked(Convert.ToDateTime(dr.GetValue(0)));
+                    hours = Convert.ToDouble(getWorked().Hour);
+                    minutes = Convert.ToDouble(getWorked().Minute);
+                    minutes = minutes / 60;
+                    setTotal(getTotal() + hours + minutes);
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("ERROR: " + ex);
+            }
+            finally
+            {
+                d1.SqlDbConection2.Close();
+            }
+        }
+        
+        //Method for Selecting hours requested off between two given DateTimes.
+        //Selects TimeWorked from EmpTime table between 2 provided DateTimes(ti for timeIn, to for time Out), 
+        //sets double Total to figure out hours worked in that time frame.
+        //Unlike the last method, this one only selects rows where absence = true
+        public void selectAbsence(string _id, DateTime ti, DateTime to)
+        {
+            //sets total hours for week to 0
+            setTotal(0);
+            //instantiate hours and minutes doubles for determining total time worked
+            double hours = 0;
+            double minutes = 0;
+            //Connect to DB
+            d1.DBSetup();
+            d1.cmd = "SELECT TimeWorked FROM EmpTime WHERE EmpID = " + "'" + _id + "' And TimeIn >= '" + ti + "' and TimeOut <= '" + to + "' AND absence = 'true'";
             d1.SqlDataAdapter.SelectCommand.Connection = d1.SqlDbConection2;
             d1.SqlDataAdapter.SelectCommand.CommandText = d1.cmd;
 

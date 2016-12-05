@@ -74,7 +74,7 @@ namespace Tester
 
         }
 
-        //====
+        //====Insert TimeIO/EmpTime=====//
         private void btnInsertTime_Click(object sender, EventArgs e)
         {
             TimeIO t1;
@@ -83,6 +83,7 @@ namespace Tester
             t1.Display();
         }
 
+        //====Update Employee/EmpInfo====//
         private void btnUpEmp_Click(object sender, EventArgs e)
         {
             Employee e2;
@@ -90,6 +91,7 @@ namespace Tester
             e2.updateEmp();
         }
 
+        //====Delete TimeIO/EmpTime====//
         private void btnDelTimeIO_Click(object sender, EventArgs e)
         {
             TimeIO t1;
@@ -97,11 +99,13 @@ namespace Tester
             t1.deleteTime();
         }
 
+
         private void Form1_Load(object sender, EventArgs e)
         {
 
         }
 
+        //====Update TimeIO/EmpTime====//
         private void btnUpTimeIO_Click(object sender, EventArgs e)
         {
             TimeIO t1;
@@ -109,6 +113,7 @@ namespace Tester
             t1.updateTime();
         }
 
+        //====Get Total Hours Worked for a given time span, not including Absence Hours===//
         private void buttonSpan_Click(object sender, EventArgs e)
         {
             TimeIO t1;
@@ -117,6 +122,7 @@ namespace Tester
             Console.WriteLine(t1.getTotal());
         }
 
+        //===Get List of Employees based on Supervisor ID===//
         private void buttonSR_Click(object sender, EventArgs e)
         {
             Supervisor s1 = new Supervisor();
@@ -124,6 +130,7 @@ namespace Tester
             s1.display();
         }
 
+        //===Get Overtime employees and hours based on Supervisor ID==//
         private void buttonOT_Click(object sender, EventArgs e)
         {
             Supervisor s1 = new Supervisor();
@@ -132,12 +139,31 @@ namespace Tester
             s1.display();
         }
 
+        //===Get Overtime employees and hours====//
         private void buttonHROT_Click(object sender, EventArgs e)
         {
             HR h1 = new HR();
             h1.selectEmps();
             h1.selectOvertime(new DateTime(2014, 5, 5, 0, 0, 0), new DateTime(2014, 5, 9, 23, 59, 59));
             h1.display();
+        }
+
+        //===Get PTO for employees based on Supervisor ID===//
+        private void buttonSRPTO_Click(object sender, EventArgs e)
+        {
+            Supervisor s1 = new Supervisor();
+            s1.selectEmps("900254456");
+            s1.selectAbsence(new DateTime(2014, 5, 5, 0, 0, 0), new DateTime(2014, 5, 9, 23, 59, 59));
+            s1.display();
+        }
+
+        //===Get PTO for all employees==//
+        private void buttonHRPTO_Click(object sender, EventArgs e)
+        {
+            HR s1 = new HR();
+            s1.selectEmps();
+            s1.selectAbsence(new DateTime(2014, 5, 5, 0, 0, 0), new DateTime(2014, 5, 9, 23, 59, 59));
+            s1.display();
         }
     }//End Class
 }

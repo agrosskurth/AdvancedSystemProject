@@ -46,6 +46,8 @@
             this.buttonSR = new System.Windows.Forms.Button();
             this.buttonOT = new System.Windows.Forms.Button();
             this.buttonHROT = new System.Windows.Forms.Button();
+            this.buttonHRPTO = new System.Windows.Forms.Button();
+            this.buttonSRPTO = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCorrect
@@ -224,11 +226,33 @@
             this.buttonHROT.UseVisualStyleBackColor = true;
             this.buttonHROT.Click += new System.EventHandler(this.buttonHROT_Click);
             // 
+            // buttonHRPTO
+            // 
+            this.buttonHRPTO.Location = new System.Drawing.Point(428, 97);
+            this.buttonHRPTO.Name = "buttonHRPTO";
+            this.buttonHRPTO.Size = new System.Drawing.Size(98, 49);
+            this.buttonHRPTO.TabIndex = 19;
+            this.buttonHRPTO.Text = "HR PTO List";
+            this.buttonHRPTO.UseVisualStyleBackColor = true;
+            this.buttonHRPTO.Click += new System.EventHandler(this.buttonHRPTO_Click);
+            // 
+            // buttonSRPTO
+            // 
+            this.buttonSRPTO.Location = new System.Drawing.Point(428, 42);
+            this.buttonSRPTO.Name = "buttonSRPTO";
+            this.buttonSRPTO.Size = new System.Drawing.Size(98, 49);
+            this.buttonSRPTO.TabIndex = 18;
+            this.buttonSRPTO.Text = "Supervisor PTO List";
+            this.buttonSRPTO.UseVisualStyleBackColor = true;
+            this.buttonSRPTO.Click += new System.EventHandler(this.buttonSRPTO_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(438, 273);
+            this.ClientSize = new System.Drawing.Size(544, 273);
+            this.Controls.Add(this.buttonHRPTO);
+            this.Controls.Add(this.buttonSRPTO);
             this.Controls.Add(this.buttonHROT);
             this.Controls.Add(this.buttonOT);
             this.Controls.Add(this.buttonSR);
@@ -275,6 +299,8 @@
         private System.Windows.Forms.Button buttonSR;
         private System.Windows.Forms.Button buttonOT;
         private System.Windows.Forms.Button buttonHROT;
+        private System.Windows.Forms.Button buttonHRPTO;
+        private System.Windows.Forms.Button buttonSRPTO;
     }
 }
 
