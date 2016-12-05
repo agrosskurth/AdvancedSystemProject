@@ -8,7 +8,6 @@ namespace WebTimeSheet
 {
     class TimeSheet
     {
-        private int count = 0;
         private string empID;
         private List<TimeIO> ts;
         DBConnect d1 = new DBConnect();
@@ -42,10 +41,11 @@ namespace WebTimeSheet
 
                 System.Data.SqlClient.SqlDataReader dr;
                 dr = d1.SqlDataAdapter.SelectCommand.ExecuteReader();
+                Console.WriteLine(d1.cmd);
 
                 while (dr.Read())
                 {
-                    TimeIO t1 = new TimeIO(((String)dr.GetValue(1)), (DateTime)dr.GetValue(2), (DateTime)dr.GetValue(3), (String)dr.GetValue(4), (int)dr.GetValue(0));
+                    TimeIO t1 = new TimeIO(((String)dr.GetValue(1)), (DateTime)dr.GetValue(2), (DateTime)dr.GetValue(3), (String)dr.GetValue(4), (int)dr.GetValue(0), (bool)dr.GetValue(5), (bool)dr.GetValue(7));
                     getTS().Add(t1);
                 }
             }

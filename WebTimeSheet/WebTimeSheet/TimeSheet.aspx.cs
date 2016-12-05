@@ -94,5 +94,10 @@ namespace WebTimeSheet
                 ddlReason.SelectedIndex = 0;
             }
         }
+
+        protected void ddlHoursIn_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -24,7 +24,7 @@
         <p style="text-align: center">
 &nbsp;<asp:Label ID="lblClockIn" runat="server" Text="Clock In Time"></asp:Label>
 &nbsp;&nbsp;
-            <asp:DropDownList ID="ddlHoursIn" runat="server">
+            <asp:DropDownList ID="ddlHoursIn" runat="server" OnSelectedIndexChanged="ddlHoursIn_SelectedIndexChanged">
                 <asp:ListItem>Hours</asp:ListItem>
                 <asp:ListItem Text="12 AM" Value="0"></asp:ListItem>
                 <asp:ListItem>1 AM</asp:ListItem>
