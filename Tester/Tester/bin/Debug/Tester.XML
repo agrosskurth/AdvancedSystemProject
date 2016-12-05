@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tester</name>
+    </assembly>
+    <members>
+        <member name="F:Tester.Authentication._employeeId">
+             <Properties>
+            employeeId is the id that has been entered and needs to be validated against the database
+            employeePw is the pw that has been entered and needs to be validated against the database
+            goodId is a boolean value that flags whether the username was correct or not. The id is never checked directly against the database, it is determined by executing an sql query that contains the entered id. If the query returns a result we know that the entered id matches a record in the database. 
+            _password is a boolean value that flags whether the password was correct or not
+            dbConnection is an object of the DBConnect class we created. dbConnection holds establishes a connection to the database, and the dbConnection variable holds this connection object
+            </Properties>
+        </member>
+        <member name="M:Tester.Authentication.#ctor">
+             <Constructors>
+             Authentication() is the no argument constructor for the Authenticate class. It instantiates an object with a blank ID and PW
+            Authentication(String emId, String emPw) is the only other constructor for the Authenticate class. It instantiates an Authenticate object with an ID and PW set to the arguments, where the first argument emId accepts an employee id as a string and the second argument emPw accepts an employee pw as a string.
+             </Constructors>
+        </member>
+        <member name="M:Tester.Authentication.setEmployeeId(System.String)">
+            <Methods>
+            setEmployeeId(String emId) accepts a string that represents the input username and sets it to the employeeId property
+            setEmployeePw(String empPw) accepts a string that represents the input password and sets it to the employeePw property
+            getEmployeeId() returns a string that is the current value of the employeeId property
+            getEmployeePw() returns a string that is the current value of the employeePw property
+            SelectDB() is a method we created to check the input ID (employeeId property) and the input PW (employeePw property). It executes a query against the database to select a record where an employee ID matches the employeeId property. If the query is executed succesfully and returns a reader, we know that the ID matches a record found in the databse and therefore is correct. Once it is determined an ID is correct we attempt to validate the PW. If the PW is correct the program will continue, if the pw is incorrect the application will prompt the user to try again.
+            </Methods>
+        </member>
+        <member name="F:Tester.Form1.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:Tester.Form1.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Tester.Form1.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:Tester.Program.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="T:Tester.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:Tester.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:Tester.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>
