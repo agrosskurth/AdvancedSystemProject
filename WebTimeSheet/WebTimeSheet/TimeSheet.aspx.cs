@@ -99,5 +99,10 @@ namespace WebTimeSheet
         {
 
         }
+
+        protected void btnHome_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Home.aspx");
+        }
     }
 }

@@ -9,7 +9,7 @@ using System.Data;
 namespace WebTimeSheet
 {
     class DBConnect
-    {
+    {        
         //++++++++++++++DataBase Element 
         public System.Data.SqlClient.SqlDataAdapter SqlDataAdapter;
         public System.Data.SqlClient.SqlCommand SqlDbSelectCommand2;

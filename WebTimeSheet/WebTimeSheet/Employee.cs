@@ -8,17 +8,17 @@ using System.Data;
 
 namespace WebTimeSheet
 {
-   public class Employee
+    class Employee
     {
         //==========Properties===========//
         private bool SR, HR, NE, FuTime;
         private String id, fName, lName, street, city, state, zip, email, SRID;
         DBConnect d1 = new DBConnect();
-
+        
 
         //==========Constructors===========//
         public Employee()
-        {
+        { 
             SR = false;
             HR = false;
             NE = false;
@@ -32,7 +32,7 @@ namespace WebTimeSheet
             zip = "";
             email = "";
             SRID = "";
-
+            
         }
 
         public Employee(String i, String fn, String ln, String str, String c, String sta, String z, String e, bool s, bool h, bool n, String sid, bool f)
@@ -239,6 +239,6 @@ namespace WebTimeSheet
         public void deleteEmp()
         {
 
-        }//End Class
-    }
+        }
+    }//End Class
 }

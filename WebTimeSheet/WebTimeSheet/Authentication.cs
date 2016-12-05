@@ -11,12 +11,10 @@ namespace WebTimeSheet
         //+++properties++
         private String _employeeId;
         private String _employeePw;
-        private String validateEmployeeId;
         private String validateEmployeePw;
         //to confram correct username and password
         bool x = false;
-        public bool worked = false;
-        bool _password = false;
+        public bool worked;
         DBConnect d1 = new DBConnect();
 
         public Authentication()
@@ -41,13 +39,13 @@ namespace WebTimeSheet
         public String getValidateEmployeePw() { return validateEmployeePw; }
 
 
-        //SelectDB Method for checking password to username. Changed by Rusty to incorporate DBConnect
-        //on 10/19/2016
+            //SelectDB Method for checking password to username. Changed by Rusty to incorporate DBConnect
+            //on 10/19/2016
         public void SelectDB()
         {
             _employeeId = getEmployeeId();
             d1.DBSetup();
-
+                
             //Console.WriteLine("After set up");
 
             d1.cmd = "Select * from EmpLog where EmpId ='" + getEmployeeId() + "'";
@@ -73,8 +71,9 @@ namespace WebTimeSheet
                     //If the given username matches one in the DB, validate the password.
                     if (dr.GetValue(1).Equals(getEmployeePw()))
                     {
-                        Console.Out.WriteLine("Password is correct");
                         worked = true;
+                        Console.Out.WriteLine("Password is correct");
+
                     }
                     //If the above statement fails, print incorrect password.
                     else
@@ -87,7 +86,7 @@ namespace WebTimeSheet
                 {
                     Console.WriteLine("Username is incorrect");
                 }
-                //General exception catch that will be expanded upon
+            //General exception catch that will be expanded upon
             }
             catch (Exception ex)
             {

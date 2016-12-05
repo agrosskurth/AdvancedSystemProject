@@ -1,21 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace WebTimeSheet
 {
-    public class HR
-    {
+    class HR {
 
         //====Properties=====
 
-        //list for employee objects
-        private List<Employee> emps;
-        //list from holding overtime employee ids
-        private List<string> empIds;
+        //list of all employees
+        public List<Employee> emps;
+        //Database Connect Object
         DBConnect d1 = new DBConnect();
-        private List<double> hours;
+        //list of employee ids who have overtime(OT)/Paid Time Off(PTO) hours
+        public List<string> empIds;
+        //list of OT/PTO Hours 
+        public List<double> hours;
 
         //====Constructors====
 
@@ -37,7 +39,7 @@ namespace WebTimeSheet
         public List<double> getHours() { return hours; }
 
         //====Behaviors====
-
+        
         //populates emp list with employees selected from the EmpInfo table
         public void selectEmps()
         {
@@ -59,7 +61,7 @@ namespace WebTimeSheet
                     //create employee object from database
                     Employee e1 = new Employee(dr.GetValue(0).ToString(), dr.GetValue(1).ToString(), dr.GetValue(2).ToString(), dr.GetValue(3).ToString(), dr.GetValue(4).ToString(), dr.GetValue(5).ToString(), dr.GetValue(6).ToString(), dr.GetValue(7).ToString(), Convert.ToBoolean(dr.GetValue(8)), Convert.ToBoolean(dr.GetValue(9)), Convert.ToBoolean(dr.GetValue(10)), dr.GetValue(11).ToString(), Convert.ToBoolean(dr.GetValue(12)));
                     //add employee object to emp list
-                    getEmps().Add(e1);
+                    getEmps().Add(e1);                    
                 }
             }
             catch (Exception e)
@@ -106,21 +108,47 @@ namespace WebTimeSheet
             }
         }
 
+        //Method for selecting reported Paid Time Off and Absences
+        //Selects TimeWorked from EmpTime Table between 2 DateTimes where Absence = true, sets double Total to figure out how many
+        //absence hours were reported
+        public void selectAbsence(DateTime i, DateTime o)
+        {
+            TimeIO tio = new TimeIO();
+            for (int x = 0; x < emps.Count(); x++)
+            {
+                tio.selectAbsence(emps[x].getId(), i, o);
+                if (tio.getTotal() > 0)
+                {
+                    getEmpIds().Add(emps[x].getId());
+                    getHours().Add(tio.getTotal());
+                }
+            }
+        }
+
         //Display function to show the list of employees in the Emps and EmpIds lists
         public void display()
         {
+            Employee e1 = new Employee();
+
             //display all employees
             for (int x = 0; x < emps.Count(); x++)
             {
                 Console.WriteLine("EMPLOYEE -- " + emps[x].getId());
             }
-
+            
             //display all overtime employees
-            for (int x = 0; x < empIds.Count(); x++)
+            for(int x = 0; x<empIds.Count(); x++)
             {
                 Console.WriteLine("Overtime Employees -- " + empIds[x]);
             }
+
+            //all pto hours
+            for (int x = 0; x < empIds.Count(); x++)
+            {
+                e1.selectEmp(empIds[x]);
+                Console.WriteLine("Absent Employee: " + e1.getFName() + " " + e1.getLName());
+                Console.WriteLine("PTO reported: " + ((int)(hours[x]) + " Hours and " + (hours[x] - (int)hours[x]) * 60) + " minutes.");
+            }
         }
     }
-
 }

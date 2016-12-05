@@ -10,6 +10,9 @@
     <form id="form1" runat="server">
     <div>
     <h1 style="text-align: center">Time Sheet Entry</h1>
+        <p style="text-align: left">
+            <asp:Button ID="btnHome" runat="server" OnClick="btnHome_Click" Text="Home" />
+        </p>
         <p style="text-align: center">
             <asp:Label ID="lblSuccess" runat="server" ForeColor="#339933" Text="*Your time sheet has been submitted successfully" Visible="False"></asp:Label>
             <asp:Label ID="lblError" runat="server" ForeColor="Red" Text="*Please make sure you have a selection in all boxes before you press submit" Visible="False"></asp:Label>

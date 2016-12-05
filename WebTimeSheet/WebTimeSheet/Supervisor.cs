@@ -1,17 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace WebTimeSheet
 {
-    public class Supervisor
+    class Supervisor
     {
-
+        //supervisor ID
         private string srId;
+        //list of all employees
         private List<Employee> emps;
         DBConnect d1 = new DBConnect();
+        //list of employee ids who have overtime(OT)/Paid Time Off(PTO) hours
         private List<string> empIds;
+        //list of OT/PTO Hours 
         private List<double> hours;
 
         public Supervisor()
@@ -82,6 +86,22 @@ namespace WebTimeSheet
             }
         }
 
+        //Method for selecting reported Paid Time Off and Absences
+        //Selects TimeWorked from EmpTime Table between 2 DateTimes where Absence = true, sets double Total to figure out how many
+        //absence hours were reported
+        public void selectAbsence(DateTime i, DateTime o)
+        {
+            TimeIO tio = new TimeIO();
+            for (int x = 0; x < emps.Count(); x++)
+            {
+                tio.selectAbsence(emps[x].getId(), i, o);
+                if (tio.getTotal() > 0)
+                {
+                    getEmpIds().Add(emps[x].getId());
+                    getHours().Add(tio.getTotal());
+                }
+            }
+        }
 
         public void display()
         {
@@ -98,6 +118,14 @@ namespace WebTimeSheet
                 e1.selectEmp(empIds[x]);
                 Console.WriteLine("Overtime Employee: " + e1.getFName() + " " + e1.getLName());
                 Console.WriteLine("Overtime Hours Worked: " + (((int)(hours[x]) - 40) + " Hours and " + (hours[x] - (int)hours[x]) * 60) + " minutes.");
+            }
+
+            //all pto hours
+            for (int x = 0; x < empIds.Count(); x++)
+            {
+                e1.selectEmp(empIds[x]);
+                Console.WriteLine("Absent Employee: " + e1.getFName() + " " + e1.getLName());
+                Console.WriteLine("PTO reported: " + ((int)(hours[x]) + " Hours and " + (hours[x] - (int)hours[x]) * 60) + " minutes.");
             }
         }
     }
