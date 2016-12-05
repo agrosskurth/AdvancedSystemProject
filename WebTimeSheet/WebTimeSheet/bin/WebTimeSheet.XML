@@ -1,0 +1,284 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebTimeSheet</name>
+    </assembly>
+    <members>
+        <member name="F:WebTimeSheet.About.form1">
+            <summary>
+            form1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:WebTimeSheet.About.btnHome">
+            <summary>
+            btnHome control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:WebTimeSheet.Authentication._employeeId">
+            <summary>
+            An employee ID
+            </summary>
+        </member>
+        <member name="F:WebTimeSheet.Authentication._employeePw">
+            <summary>
+            An employee PW
+            </summary>
+        </member>
+        <member name="F:WebTimeSheet.Authentication.d1">
+            <summary>
+            The connection object returned by the DBConnec object
+            </summary>
+        </member>
+        <member name="F:WebTimeSheet.Home.form1">
+            <summary>
+            form1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:WebTimeSheet.Home.lblFName">
+            <summary>
+            lblFName control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:WebTimeSheet.Home.lblLName">
+            <summary>
+            lblLName control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:WebTimeSheet.Home.TreeView1">
+            <summary>
+            TreeView1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:WebTimeSheet.Home.btnLogout0">
+            <summary>
+            btnLogout0 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:WebTimeSheet.Home.SiteMapDataSource1">
+            <summary>
+            SiteMapDataSource1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:WebTimeSheet.WebForm1.form1">
+            <summary>
+            form1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:WebTimeSheet.WebForm1.labelIncorrect">
+            <summary>
+            labelIncorrect control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:WebTimeSheet.WebForm1.txtID">
+            <summary>
+            txtID control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:WebTimeSheet.WebForm1.txtPassword">
+            <summary>
+            txtPassword control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:WebTimeSheet.WebForm1.btnLogin">
+            <summary>
+            btnLogin control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:WebTimeSheet.WebForm1.btnAbout">
+            <summary>
+            btnAbout control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:WebTimeSheet.TimeSheet1.form1">
+            <summary>
+            form1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:WebTimeSheet.TimeSheet1.lblSuccess">
+            <summary>
+            lblSuccess control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:WebTimeSheet.TimeSheet1.lblError">
+            <summary>
+            lblError control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:WebTimeSheet.TimeSheet1.lblMonth">
+            <summary>
+            lblMonth control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:WebTimeSheet.TimeSheet1.lblDay">
+            <summary>
+            lblDay control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:WebTimeSheet.TimeSheet1.lblYear">
+            <summary>
+            lblYear control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:WebTimeSheet.TimeSheet1.lblClockIn">
+            <summary>
+            lblClockIn control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:WebTimeSheet.TimeSheet1.ddlHoursIn">
+            <summary>
+            ddlHoursIn control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:WebTimeSheet.TimeSheet1.ddlMinutesIn">
+            <summary>
+            ddlMinutesIn control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:WebTimeSheet.TimeSheet1.btnSubmit">
+            <summary>
+            btnSubmit control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:WebTimeSheet.TimeSheet1.lblClockOut">
+            <summary>
+            lblClockOut control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:WebTimeSheet.TimeSheet1.ddlHoursOut">
+            <summary>
+            ddlHoursOut control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:WebTimeSheet.TimeSheet1.ddlMinutesOut">
+            <summary>
+            ddlMinutesOut control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:WebTimeSheet.TimeSheet1.ddlReason">
+            <summary>
+            ddlReason control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="F:WebTimeSheet.TimeSheet1.SiteMapDataSource1">
+            <summary>
+            SiteMapDataSource1 control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+    </members>
+</doc>
