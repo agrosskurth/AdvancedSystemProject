@@ -21,5 +21,22 @@ namespace WebTimeSheet
             //Clicking the logout button redirects the user to the login.aspx page
             Response.Redirect("~/Login.aspx");
         }
+
+        protected void btnReports_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/ReportsSR.aspx");
+        }
+
+        protected void btnReportsHR_Click(object sender, EventArgs e)
+        {
+            if (Session["EmployeeHR"].Equals(true))
+            {
+                Response.Redirect("~/ReportsHR.aspx");
+            }
+            else
+            {
+                Response.Redirect("~/ReportsSR.aspx");
+            }
+        }
     }
 }

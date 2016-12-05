@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Login</title>
     <style type="text/css">
         .auto-style1 {
             font-size: x-large;
@@ -33,6 +33,8 @@
         </p>
         <p style="text-align: center">
 &nbsp;<asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" />
+        &nbsp;&nbsp;&nbsp;
+            <asp:Button ID="btnLoginSR" runat="server" OnClick="btnLoginSR_Click" Text="Supervisor" Width="78px" />
         </p>
         <p class="auto-style2" style="margin-left: 120px">
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

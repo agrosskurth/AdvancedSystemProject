@@ -8,7 +8,7 @@ using System.Data;
 
 namespace WebTimeSheet
 {
-    class Employee
+   public class Employee
     {
         //==========Properties===========//
         private bool SR, HR, NE, FuTime;

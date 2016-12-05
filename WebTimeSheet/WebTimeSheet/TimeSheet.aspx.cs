@@ -64,7 +64,7 @@ namespace WebTimeSheet
                     minutesOut = mout - 1;
                     dtIn = new DateTime(date.Year, date.Month, date.Day, hoursIn, minutesIn, 00);
                     dtOut = new DateTime(date.Year, date.Month, date.Day, hoursOut, minutesOut, 00);
-                    TimeIO t1 = new TimeIO( id , dtIn , dtOut , r , 0);
+                    TimeIO t1 = new TimeIO( id , dtIn , dtOut , r , 0, false, false);
                     t1.insertTime();
 
                     //Change the visibility of the lables depending on if the user is successful in
