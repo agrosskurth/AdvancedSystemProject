@@ -8,8 +8,8 @@
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-    
+    <div style="text-align: center">
+    <h1>Reports</h1>
     </div>
     </form>
 </body>

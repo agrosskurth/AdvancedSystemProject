@@ -220,7 +220,6 @@
         <p style="text-align: center">&nbsp;</p>
         <p style="text-align: center">&nbsp;</p>
     </div>
-        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
     </form>
 </body>
 </html>

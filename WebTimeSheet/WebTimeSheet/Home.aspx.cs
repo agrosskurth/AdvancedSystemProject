@@ -38,5 +38,10 @@ namespace WebTimeSheet
                 Response.Redirect("~/ReportsSR.aspx");
             }
         }
+
+        protected void btnTimeSheet_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/TimeSheet.aspx");
+        }
     }
 }

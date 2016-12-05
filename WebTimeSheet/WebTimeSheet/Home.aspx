@@ -23,7 +23,7 @@
         </div>
         <p>
             <asp:Button ID="btnHome" runat="server" Text="Home" />
-&nbsp;<asp:Button ID="btnTimeSheet" runat="server" Text="TimeSheet" Width="86px" />
+&nbsp;<asp:Button ID="btnTimeSheet" runat="server" Text="TimeSheet" Width="86px" OnClick="btnTimeSheet_Click" />
         </p>
         <p>
             &nbsp;</p>
